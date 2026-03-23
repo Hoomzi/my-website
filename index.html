@@ -420,18 +420,21 @@
           </div>
         </div>
         <div class="contact-form-wrap">
-          <form id="contactForm" action="https://formspree.io/f/xjgaqkbr" method="POST">
-   <div class="form-row">
+          <form id="contactForm">
+  
+  <div class="form-row">
     <div class="form-group">
       <label>Your Name</label>
       <input type="text" name="name" placeholder="John Doe" required />
     </div>
-<div class="form-group">
+
+    <div class="form-group">
       <label>Email Address</label>
       <input type="email" name="email" placeholder="john@example.com" required />
     </div>
   </div>
-<div class="form-group">
+
+  <div class="form-group">
     <label>Service Needed</label>
     <select name="service">
       <option value="">Select a service...</option>
@@ -441,13 +444,22 @@
       <option value="seo">SEO Optimization</option>
     </select>
   </div>
- <div class="form-group">
+
+  <div class="form-group">
     <label>Project Details</label>
-    <textarea name="message" placeholder="Tell me about your project, timeline, and budget..." rows="5"></textarea>
+    <textarea name="message" rows="5" required></textarea>
   </div>
-<button type="submit" class="btn-submit">
-    Send Message →
-  </button>
+
+  <button class="btn-submit" type="submit" id="submitBtn">Send Message →</button>
+
+  <div id="formSuccess" style="display:none; color:green;">
+    ✓ Message sent successfully!
+  </div>
+
+  <div id="formError" style="display:none; color:red;">
+    ⚠ Something went wrong. Try again.
+  </div>
+
 </form>
         </div>
       </div>
