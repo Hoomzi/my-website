@@ -99,8 +99,43 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(tUpdate, 100);
 
   // FORM
-  var form=document.getElementById('contactForm');
-  if(form){ var sm=document.getElementById('formSuccess'); form.addEventListener('submit',function(e){ e.preventDefault(); var btn=form.querySelector('button[type="submit"]'); btn.textContent='Sending...'; btn.style.opacity='.7'; setTimeout(function(){ btn.textContent='Send Message →'; btn.style.opacity='1'; sm.classList.add('show'); form.reset(); setTimeout(function(){ sm.classList.remove('show'); },5000); },1500); }); }
+  const form = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+const successMsg = document.getElementById("formSuccess");
+const errorMsg = document.getElementById("formError");
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  submitBtn.textContent = "Sending...";
+  submitBtn.disabled = true;
+
+  successMsg.style.display = "none";
+  errorMsg.style.display = "none";
+
+  try {
+    const response = await fetch("https://formspree.io/f/xjgaqkbr", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json"
+      },
+      body: new FormData(form)
+    });
+
+    if (response.ok) {
+      successMsg.style.display = "block";
+      form.reset();
+    } else {
+      errorMsg.style.display = "block";
+    }
+
+  } catch (error) {
+    errorMsg.style.display = "block";
+  }
+
+  submitBtn.textContent = "Send Message →";
+  submitBtn.disabled = false;
+});
 
   // SMOOTH SCROLL
   document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var t=document.querySelector(a.getAttribute('href')); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); } }); });
