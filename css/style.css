@@ -167,7 +167,7 @@ button {
   transition: padding var(--tr);
 }
 #header.scrolled .header-inner {
-  padding: 1.9rem 1.5rem;
+  padding: 1.9rem 1rem;
 }
 .logo {
   font-size: 1.5rem;
