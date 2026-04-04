@@ -1690,3 +1690,27 @@ nav a.active::after {
     background: var(--bg);
 }
 }
+/* تنظیمات کلی لوگو در هدر */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* فاصله بین تصویر و متن */
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px; /* اندازه لوگو در دسکتاپ */
+  width: auto;
+  object-fit: contain;
+}
+
+/* تنظیمات برای نمایش موبایل */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 30px; /* اندازه کوچکتر برای موبایل */
+  }
+  
+  .logo {
+    font-size: 1.1rem; /* در صورت نیاز، سایز متن هم کمی کوچکتر شود */
+  }
+}
