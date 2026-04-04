@@ -1690,27 +1690,25 @@ nav a.active::after {
     background: var(--bg);
 }
 }
-/* تنظیمات کلی لوگو در هدر */
+/* تراز کردن لوگو و متن در یک خط */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px; /* فاصله بین تصویر و متن */
+  gap: 12px; /* فاصله بین تصویر و متن */
   text-decoration: none;
 }
 
+/* محدود کردن اندازه تصویر لوگو */
 .logo-img {
-  height: 40px; /* اندازه لوگو در دسکتاپ */
+  height: 45px; /* این عدد را بر اساس سلیقه خودت بین 30 تا 50 تغییر بده */
   width: auto;
   object-fit: contain;
+  display: block;
 }
 
-/* تنظیمات برای نمایش موبایل */
+/* ریسپانسیو کردن برای موبایل */
 @media (max-width: 768px) {
   .logo-img {
-    height: 30px; /* اندازه کوچکتر برای موبایل */
-  }
-  
-  .logo {
-    font-size: 1.1rem; /* در صورت نیاز، سایز متن هم کمی کوچکتر شود */
+    height: 35px; /* کوچکتر شدن لوگو در موبایل */
   }
 }
