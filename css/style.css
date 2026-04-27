@@ -309,6 +309,7 @@ nav a.active::after {
 }
 
 .hero {
+  
   min-height: 100svh;
   position: relative;
   overflow: hidden;
@@ -1535,8 +1536,9 @@ nav a.active::after {
     font-size: 1.2rem;
   }
   .hero {
-    min-height: 100svh;
-    align-items: flex-start;
+    min-height: 100vh; 
+    height: auto;      
+    padding: 100px 0;
   }
   .hero-slider {
     min-height: 100svh;
