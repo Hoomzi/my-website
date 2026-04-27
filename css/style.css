@@ -372,8 +372,9 @@ nav a.active::after {
 }
 .hero-slider {
   width: 100%;
-  min-height: 100svh;
-  position: relative;
+    min-height: 600px;
+    height: auto;
+    position: relative;
 }
 .slide {
   position: absolute;
