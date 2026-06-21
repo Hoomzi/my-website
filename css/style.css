@@ -308,9 +308,9 @@ nav a.active::after {
   font-weight: 700;
 }
 
+/* ── HERO SECTION FIXED ── */
 .hero {
-  
-  min-height: 100svh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -372,15 +372,19 @@ nav a.active::after {
 }
 .hero-slider {
   width: 100%;
-    min-height: 600px;
-    height: auto;
-    position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  min-height: 600px;
+  position: relative;
 }
 .slide {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 30px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.8s ease;
@@ -392,9 +396,9 @@ nav a.active::after {
 .slide-content {
   position: relative;
   z-index: 2;
-  padding: 7rem 2rem 2rem;
+  padding: 8rem 0 2rem; /* افزایش فضا برای عدم چسبیدن به هدر */
   flex: 1;
-  max-width: 740px;
+  max-width: 600px;
 }
 .slide-tag {
   display: inline-flex;
@@ -469,11 +473,14 @@ nav a.active::after {
   box-shadow: 0 12px 32px rgba(255, 255, 255, 0.25);
 }
 .slide-img-frame {
-  position: absolute;
-  right: 6%;
-  top: 55%;
-  transform: translateY(-50%);
+  position: relative;
+  right: auto;
+  top: auto;
+  transform: none;
   z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 .profile-hero-wrap {
   position: relative;
@@ -517,20 +524,13 @@ nav a.active::after {
   gap: 0.6rem;
   z-index: 10;
 }
-.badge-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .fb1 {
   top: 20px;
   left: -130px;
   animation: floatBadge 4s ease-in-out infinite;
 }
 
+/* ── STATS BAND ── */
 .stats-band {
   background: linear-gradient(
     135deg,
@@ -584,6 +584,7 @@ nav a.active::after {
   margin-top: 0.5rem;
 }
 
+/* ── SECTIONS GENERAL ── */
 .section-head {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -613,6 +614,7 @@ nav a.active::after {
   margin-top: 0.75rem;
 }
 
+/* ── SERVICES ── */
 .services {
   padding: 7rem 0;
   background: var(--bg);
@@ -771,18 +773,11 @@ nav a.active::after {
   left: 0;
   font-size: 0.72rem;
 }
-.service-card:nth-child(1) .service-list li::before {
-  color: var(--c1);
-}
-.service-card:nth-child(2) .service-list li::before {
-  color: var(--c5);
-}
-.service-card:nth-child(3) .service-list li::before {
-  color: var(--c3);
-}
-.service-card:nth-child(4) .service-list li::before {
-  color: var(--c6);
-}
+.service-card:nth-child(1) .service-list li::before { color: var(--c1); }
+.service-card:nth-child(2) .service-list li::before { color: var(--c5); }
+.service-card:nth-child(3) .service-list li::before { color: var(--c3); }
+.service-card:nth-child(4) .service-list li::before { color: var(--c6); }
+
 .glass-card {
   background: rgba(255, 255, 255, 0.06) !important;
   backdrop-filter: blur(16px);
@@ -795,6 +790,7 @@ nav a.active::after {
   border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
+/* ── ABOUT ── */
 .about {
   padding: 7rem 0;
   background: var(--bg2);
@@ -928,18 +924,10 @@ nav a.active::after {
   border-radius: 3px;
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.sf1 {
-  background: var(--grad-fire);
-}
-.sf2 {
-  background: var(--grad-purple);
-}
-.sf3 {
-  background: var(--grad-nature);
-}
-.sf4 {
-  background: var(--grad-warm);
-}
+.sf1 { background: var(--grad-fire); }
+.sf2 { background: var(--grad-purple); }
+.sf3 { background: var(--grad-nature); }
+.sf4 { background: var(--grad-warm); }
 .about-actions {
   display: flex;
   gap: 1.25rem;
@@ -952,25 +940,21 @@ nav a.active::after {
   padding: 7rem 0;
   background: var(--bg);
 }
-
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-
 .port-card {
   border-radius: var(--radius);
   overflow: hidden;
 }
-
 .port-img {
   height: 260px;
   border-radius: var(--radius);
   overflow: hidden;
   background: #16162a;
 }
-
 .port-img img {
   width: 100%;
   height: 100%;
@@ -979,15 +963,12 @@ nav a.active::after {
   border-radius: var(--radius);
   transition: transform 0.5s ease;
 }
-
 .port-card:hover .port-img img {
   transform: scale(1.04);
 }
-
 .port-info {
   padding: 1rem 0.25rem 0.5rem;
 }
-
 .port-cat {
   font-size: 0.67rem;
   font-weight: 700;
@@ -1002,30 +983,13 @@ nav a.active::after {
   display: block;
   margin-bottom: 0.3rem;
 }
-
 .port-info h4 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--white);
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-  .port-img {
-    height: 220px;
-  }
-}
-
+/* ── TESTIMONIALS ── */
 .testimonials {
   padding: 7rem 0;
   background: var(--bg2);
@@ -1107,18 +1071,10 @@ nav a.active::after {
   color: white;
   flex-shrink: 0;
 }
-.av1 {
-  background: var(--grad-fire);
-}
-.av2 {
-  background: var(--grad-purple);
-}
-.av3 {
-  background: var(--grad-nature);
-}
-.av4 {
-  background: var(--grad-warm);
-}
+.av1 { background: var(--grad-fire); }
+.av2 { background: var(--grad-purple); }
+.av3 { background: var(--grad-nature); }
+.av4 { background: var(--grad-warm); }
 .testi-author strong {
   display: block;
   font-size: 0.84rem;
@@ -1157,6 +1113,7 @@ nav a.active::after {
   color: var(--white);
 }
 
+/* ── CONTACT ── */
 .contact {
   padding: 7rem 0;
   background: var(--bg);
@@ -1230,15 +1187,9 @@ nav a.active::after {
     rgba(77, 150, 255, 0.2)
   );
 }
-.ci-icon i {
-  font-size: 1rem;
-}
-.cii1 i {
-  color: #ff9a3c;
-}
-.cii2 i {
-  color: #25d366;
-}
+.ci-icon i { font-size: 1rem; }
+.cii1 i { color: #ff9a3c; }
+.cii2 i { color: #25d366; }
 .contact-item strong {
   display: block;
   font-size: 0.68rem;
@@ -1338,6 +1289,7 @@ nav a.active::after {
   display: block;
 }
 
+/* ── FOOTER ── */
 .footer {
   background: var(--bg2);
 }
@@ -1486,13 +1438,55 @@ nav a.active::after {
   transform: translateY(0);
 }
 
+/* ── MEDIA QUERIES FIXED & OPTIMIZED ── */
+
+/* ۱. برای مانیتور لپ‌تاپ‌های استاندارد و کوچک (مثل لپ‌تاپ خودت) */
+@media (max-width: 1366px) {
+  .slide-content h1 {
+    font-size: 2.8rem;
+  }
+  .grad-border-hero {
+    width: 240px;
+    height: 330px;
+  }
+  .fb1 {
+    left: -80px;
+  }
+}
+
+/* ۲. برای تبلت‌ها و دسکتاپ‌های فوق باریک */
 @media (max-width: 1024px) {
-  .slide-img-frame {
-    display: none;
+  .hero-slider {
+    min-height: auto;
+    height: auto;
+  }
+  .slide {
+    position: relative;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    opacity: 1;
   }
   .slide-content {
     padding-top: 9rem;
     max-width: 100%;
+    text-align: center;
+  }
+  .slide-content p {
+    margin: 0 auto 2rem;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .slide-img-frame {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 4rem;
+  }
+  .fb1 {
+    display: none;
   }
   .about-inner {
     grid-template-columns: 1fr;
@@ -1522,6 +1516,7 @@ nav a.active::after {
   }
 }
 
+/* ۳. برای موبایل‌ها */
 @media (max-width: 768px) {
   nav,
   .btn-header {
@@ -1628,89 +1623,5 @@ nav a.active::after {
   .port-card.wide .port-img {
     height: 210px;
     min-height: 210px;
-  }
-  .testi-card {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-  }
-  .contact-inner {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-  .contact-form-wrap {
-    padding: 1.5rem;
-  }
-  .footer-top-inner {
-    grid-template-columns: 1fr;
-  }
-  .footer-brand p {
-    max-width: 100%;
-  }
-  .stats-band {
-    flex-wrap: wrap;
-  }
-  .stat-item {
-    min-width: 50%;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  .stat-item:nth-child(odd) {
-    border-right: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  #cursor,
-  #cursor-follower {
-    display: none;
-  }
-}
-@media (max-width: 480px) {
-  .service-card {
-    width: 100% !important;
-  }
-  .slide-content h1 {
-    font-size: 1.75rem;
-    line-height: 1.5;
-  }
-  .btn-grad {
-    font-size: 0.75rem;
-    padding: 0.55rem 1.2rem;
-  }
-  .grad-border-hero {
-    width: 145px;
-    height: 195px;
-  }
-  .contact-form-wrap {
-    padding: 1.25rem;
-  }
-  .header-inner {
-    padding: 0.9rem 1rem;
-  }
-  .portfolio {
-    padding: 5rem 0;
-    background: var(--bg);
-}
-}
-/* تراز کردن لوگو و متن در یک خط */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* فاصله بین تصویر و متن */
-  text-decoration: none;
-}
-
-/* محدود کردن اندازه تصویر لوگو */
-.logo-img {
-  height: 45px; /* این عدد را بر اساس سلیقه خودت بین 30 تا 50 تغییر بده */
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-/* ریسپانسیو کردن برای موبایل */
-@media (max-width: 768px) {
-  .logo-img {
-    height: 35px; /* کوچکتر شدن لوگو در موبایل */
   }
 }
