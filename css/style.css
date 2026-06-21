@@ -585,10 +585,127 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
 .port-cat { font-size: 0.67rem; text-transform: uppercase; color: var(--c5); display: block; margin-bottom: 0.3rem; }
 .port-info h4 { font-size: 0.95rem; color: var(--white); }
 
-/* ── ۱۰. نظرات مشتریان (TESTIMONIALS) ── */
-.testimonials { padding: 7rem 0; background: var(--bg2); }
-.testi-track { display: flex; gap: 1.5rem; }
-.testi-card { flex: 1; background: var(--card); border: 1px solid var(--card-b); border-radius: var(--radius); padding: 1.75rem; }
+/* ── ۱۰. نظرات مشتریان (TESTIMONIALS & SLIDER CONTROLS) ── */
+.testimonials { 
+  padding: 7rem 0; 
+  background: var(--bg2); 
+  overflow: hidden; 
+  position: relative;
+}
+
+.testi-track { 
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1.5rem; 
+  width: 100%;
+}
+
+.testi-card { 
+  flex: 0 0 calc(33.333% - 1rem); 
+  min-width: 280px;
+  background: var(--card); 
+  border: 1px solid var(--card-b); 
+  border-radius: var(--radius); 
+  padding: 2rem; 
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.testi-card p {
+  font-size: 0.92rem;
+  color: var(--off);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.testi-meta {
+  display: block !important; 
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.testi-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  display: block !important;
+  margin-bottom: 3px;
+  clear: both;
+}
+
+.testi-role {
+  font-size: 0.78rem;
+  color: var(--muted);
+  display: block !important;
+  clear: both;
+}
+
+/* ── استایل فوق‌العاده خوانا و نئونی فلش‌ها و نقاط اسلایدر (GREEN CONTROLS) ── */
+
+/* فیکس فلش‌های جلو و عقب (دکمه‌های ناوبری) */
+.swiper-button-next,
+.swiper-button-prev,
+.slick-next,
+.slick-prev,
+.slider-arrow {
+  color: #25d366 !important;       /* تغییر رنگ آیکون یا متن فلش به سبز روشن */
+  background: rgba(37, 211, 102, 0.1) !important; /* یک بک‌گراند شیشه‌ای سبز ملایم پشت فلش */
+  border: 1px solid rgba(37, 211, 102, 0.3) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+/* در صورت استفاده از کتابخانه فونت‌آیکون در فلش‌ها */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  color: #25d366 !important;
+}
+
+/* افکت هاور روی فلش‌ها */
+.swiper-button-next:hover,
+.swiper-button-prev:hover,
+.slick-next:hover,
+.slick-prev:hover {
+  background: #25d366 !important;
+  color: #0d0d14 !important;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.5) !important;
+}
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  color: #0d0d14 !important;
+}
+
+/* فیکس نقاط پایین اسلایدر (PAGINATION DOTS) جهت وضوح کامل */
+.swiper-pagination-bullet,
+.slick-dots li button::before,
+.slider-dot {
+  background: rgba(255, 255, 255, 0.2) !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* نقطه فعال یا روشن اسلایدر */
+.swiper-pagination-bullet-active,
+.slick-dots li.slick-active button::before,
+.slider-dot.active {
+  background: #25d366 !important; /* تبدیل نقطه فعال به سبز نئونی */
+  width: 24px !important;         /* کشیده شدن نقطه فعال برای زیبایی بیستر */
+  border-radius: 6px !important;
+  box-shadow: 0 0 10px rgba(37, 211, 102, 0.6) !important;
+}
 
 /* ── ۱۱. بخش ارتباط با ما (CONTACT SECTION) ── */
 .contact { 
@@ -610,7 +727,7 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 12px;
 }
 .ci-icon {
   width: 46px;
@@ -710,6 +827,7 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .slide-content h1 { font-size: 3rem; }
   .grad-border-hero { width: 260px; height: 360px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-card { flex: 0 0 calc(50% - 1rem); } 
 }
 
 /* ب) تبلت‌ها و صفحات متوسط */
@@ -723,18 +841,17 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   
   .about-inner, .contact-inner, .footer-top-inner { grid-template-columns: 1fr; gap: 3rem; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-card { flex: 0 0 calc(100% - 1rem); } 
 }
 
-/* ج) فیکس نهایی، کامل و بدون نقص برای حالت موبایل */
+/* ج) فیکس کامل، بدون نقص و فوق‌العاده ریسپانسیو برای حالت موبایل */
 @media (max-width: 768px) {
-  /* ۱. حذف لرزش و خلاصی‌های افقی صفحه */
   html, body {
     overflow-x: hidden !important;
     width: 100%;
     position: relative;
   }
 
-  /* ۲. فشرده‌سازی و کاهش پدینگ کلی تمام سکشن‌ها جهت از بین بردن فضاهای مرده */
   .services, .about, .portfolio, .testimonials, .contact {
     padding: 3.5rem 0 !important; 
   }
@@ -743,9 +860,8 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .burger { display: flex !important; }
   .header-inner { padding: 0.8rem 1.2rem; }
   
-  /* ۳. اصلاح پدینگ و گپ بخش هیرو */
   .hero {
-    min-height: auto !important; /* حذف ارتفاع کامل ۱۰۰vh برای برچیدن فضای خالی مفرط */
+    min-height: auto !important;
     padding: 6rem 0 2rem 0 !important;
     display: flex;
     align-items: center;
@@ -753,7 +869,7 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .slide {
     flex-direction: column !important;
     text-align: center;
-    gap: 15px !important; /* کاهش فاصله بین تصویر و متن هیرو */
+    gap: 15px !important;
     width: 100%;
   }
   .slide-content {
@@ -766,7 +882,6 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .slide-content p { font-size: 0.9rem; margin: 0 auto 1.2rem auto !important; padding: 0 0.5rem; }
   .hero-btns { justify-content: center; }
   
-  /* ۴. فشرده‌سازی کادر دور عکس پروفایل */
   .slide-img-frame { display: flex; justify-content: center; width: 100%; padding: 0 !important; margin-bottom: 5px; }
   .grad-border-hero {
     width: 190px !important;
@@ -775,7 +890,6 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   }
   .grad-border-hero img { border-radius: 96px 96px 76px 76px !important; }
 
-  /* ۵. اصلاح ساختار گریدها و بخش آمار */
   .stats-band {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -794,9 +908,35 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
     gap: 1.5rem;
     width: 100%;
   }
+  
+  /* فیکس اسلایدر نظرات مشتریان در موبایل */
+  .testi-track {
+    display: flex !important; 
+    flex-direction: row !important;
+    gap: 1rem !important;
+  }
+  .testi-card {
+    flex: 0 0 100% !important; 
+    width: 100% !important;
+    padding: 1.5rem !important;
+  }
+  .testi-card p {
+    font-size: 0.88rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .testi-meta {
+    padding-top: 0.8rem !important;
+  }
+  .testi-name {
+    font-size: 0.92rem !important;
+    margin-bottom: 2px !important;
+  }
+  .testi-role {
+    font-size: 0.75rem !important;
+  }
+
   .container { padding: 0 1.2rem !important; }
 
-  /* ۶. اصلاح ساختار چیدمان اطلاعات تماس */
   .contact-inner { gap: 2rem !important; }
   .contact-items {
     gap: 1.5rem;
