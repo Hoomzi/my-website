@@ -142,3 +142,46 @@
     padding: 1.5rem; /* کاهش پدینگ داخلی فرم برای فضای بیشتر در موبایل */
   }
 }
+/* ── بازگرداندن امواج راداری دکمه شناور واتس‌اپ ── */
+.wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 400;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+
+/* ایجاد افکت موج راداری با استفاده از before و after */
+.wa-float::before,
+.wa-float::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  z-index: -1;
+  animation: waPulse 2s cubic-bezier(0.14, 0, 0, 1) infinite;
+}
+
+/* تاخیر در موج دوم برای طبیعی‌تر شدن افکت رادار */
+.wa-float::after {
+  animation-delay: 0.8s;
+}
+
+@keyframes waPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
