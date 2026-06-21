@@ -672,3 +672,117 @@ nav a.active::after {
   
   .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
 }
+/* ── MEDIA QUERIES FIXED & OPTIMIZED ── */
+
+/* ۱. برای مانیتور لپ‌تاپ‌های استاندارد و کوچک */
+@media (max-width: 1200px) {
+  .slide-content h1 {
+    font-size: 3rem;
+  }
+  .grad-border-hero {
+    width: 260px;
+    height: 360px;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ۲. برای تبلت‌ها و دسکتاپ‌های باریک */
+@media (max-width: 992px) {
+  .slide {
+    flex-direction: column-reverse; /* عکس پایین، متن بالا */
+    text-align: center;
+    gap: 30px;
+  }
+  .slide-content {
+    padding-top: 2rem;
+    max-width: 100%;
+  }
+  .slide-content p {
+    margin: 0 auto 2rem;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .slide-img-frame {
+    justify-content: center;
+    width: 100%;
+    padding-top: 6rem; /* ایجاد فضا تا هدر مبل لغزان */
+  }
+  .fb1 {
+    display: none;
+  }
+  .about-inner, .contact-inner, .footer-top-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ۳. فیکس نهایی و فوق‌العاده دقیق برای موبایل‌ها */
+@media (max-width: 768px) {
+  nav, .btn-header {
+    display: none; /* مخفی کردن منوی دسکتاپ */
+  }
+  .burger {
+    display: flex; /* نمایش منوی همبرگری */
+  }
+  .header-inner {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  /* فیکس کردن ساختار هیرو در موبایل */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+  }
+  .slide {
+    flex-direction: column; /* اول متن بیاید، بعد عکس (استاندارد موبایل) */
+    text-align: center;
+    gap: 20px;
+  }
+  .slide-content {
+    padding: 7.5rem 1rem 1rem 1rem; /* افزایش فاصله از سقف برای نرفتن زیر هدر */
+    max-width: 100%;
+    width: 100%;
+  }
+  .slide-tag {
+    margin: 0 auto 1.2rem auto; /* وسط‌چین کردن تگ بالای عنوان */
+  }
+  .slide-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  .slide-content p {
+    font-size: 0.9rem;
+    margin: 0 auto 1.5rem auto;
+  }
+  .hero-btns {
+    justify-content: center; /* وسط‌چین کردن دکمه‌ها */
+  }
+  
+  /* فیکس کردن عکس پروفایل در موبایل */
+  .slide-img-frame {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0 0 0;
+  }
+  .grad-border-hero {
+    width: 220px; /* اندازه بهینه برای موبایل */
+    height: 290px;
+    border-radius: 120px 120px 100px 100px;
+  }
+  .grad-border-hero img {
+    border-radius: 116px 116px 96px 96px;
+  }
+  
+  /* ریسپانسیو کردن بقیه بخش‌ها */
+  .services-grid, .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
