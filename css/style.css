@@ -738,8 +738,8 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .header-inner { padding: 0.8rem 1.2rem; }
   
   .hero {
-    min-height: 100vh;
-    padding: 7.5rem 0 3rem 0;
+    min-height: auto !important;
+    padding: 6rem 0 2rem 0 !important;
     display: flex;
     align-items: center;
   }
