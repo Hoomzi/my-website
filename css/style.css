@@ -116,7 +116,7 @@ header.scrolled {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.2px;
   background: var(--grad-main);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1105,6 +1105,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+  
+  .Logo, .logo {
+    gap: 0.4rem !important;
+    flex-wrap: nowrap !important;
+  }
   header {
     padding: 0.2rem 0;
   }
@@ -1185,6 +1190,7 @@ footer {
     gap: 1rem;
     text-align: center;
   }
+  
 }
 
 /* ==========================================================================
