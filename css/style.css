@@ -1193,15 +1193,15 @@ footer {
   
 }
 
-/* ==========================================================================
+//* ==========================================================================
    ۱۵. اختصاصی سیستم دوزبانه (MULTILINGUAL & RTL HELPER CLASSES)
    ========================================================================== */
 
 /* استایل دکمه زبان در دسکتاپ */
 .lang-switch-wrap {
-  margin-left: 1.5rem;
+  margin-left: 1.2rem;
   display: block;
-  flex-shrink: 0; /* جلوگیری از فشرده شدن دکمه در ابعاد کوچک دسکتاپ */
+  flex-shrink: 0;
 }
 
 .btn-lang {
@@ -1210,8 +1210,8 @@ footer {
   -webkit-backdrop-filter: blur(8px) !important;
   color: var(--white) !important;
   border: 1px solid var(--border) !important;
-  padding: 8px 16px !important;
-  font-size: 0.85rem !important;
+  padding: 8px 14px !important;
+  font-size: 0.82rem !important;
   font-weight: 600 !important;
   border-radius: 30px !important;
   display: flex !important;
@@ -1226,32 +1226,33 @@ footer {
   color: var(--bg) !important;
 }
 
-/* مدیریت فضای هدر در دسکتاپ کوچک و تبلت برای جلوگیری از شکستن منو در حالت انگلیسی */
-@media (min-width: 769px) {
+/* مدیریت فضای هدر در دسکتاپ */
+@media (min-width: 993px) {
   .header-inner {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    gap: 1rem !important;
   }
   
   #nav {
     display: flex !important;
-    gap: 1.2rem !important; /* بهینه‌سازی موقت فاصله لینک‌ها در تبلت */
+    gap: 1.2rem !important;
     flex-wrap: nowrap !important;
   }
 
   html:not([dir="rtl"]) #nav {
-    margin-left: auto !important; /* هل دادن ناوبری به سمت راست در انگلیسی */
+    margin-left: auto !important;
     margin-right: 1rem !important;
   }
 
   html[dir="rtl"] #nav {
-    margin-right: auto !important; /* هل دادن ناوبری به سمت چپ در فارسی */
+    margin-right: auto !important;
     margin-left: 1rem !important;
   }
 }
 
-/* ساختار قرینه‌سازی استایل‌ها در حالت راست‌چین (RTL) */
+/* ساختار قرینه‌سازی استایل‌ها در حالت راست‌چین (RTL - فارسی) */
 html[dir="rtl"] {
   font-family: var(--font-fa);
 }
@@ -1260,7 +1261,7 @@ html[dir="rtl"] body {
 }
 html[dir="rtl"] .lang-switch-wrap {
   margin-left: 0;
-  margin-right: 1.5rem;
+  margin-right: 1.2rem;
 }
 html[dir="rtl"] .service-card,
 html[dir="rtl"] .section-head,
@@ -1297,7 +1298,15 @@ html[dir="rtl"] .testi-card {
   text-align: right;
 }
 
-/* تنظیم تراز پیش‌فرض فوتر برای حالت انگلیسی (چپ‌چین LTR) */
+/* فیکس کردن تراز عمودی متن فارسی لوگو در موبایل */
+@media (max-width: 992px) {
+  html[dir="rtl"] header .logo {
+    line-height: 1.4 !important; /* تراز وسط دقیق برای متن فارسی روی موبایل */
+    padding-top: 2px !important;
+  }
+}
+
+/* تنظیم تراز پیش‌فرض فوتر برای حالت انگلیسی (LTR) */
 html:not([dir="rtl"]) .footer-col,
 html:not([dir="rtl"]) .footer-bottom {
   text-align: left !important;
@@ -1324,8 +1333,16 @@ html[dir="rtl"] .mobile-menu.open {
   right: auto;
 }
 
-/* اصلاحات نهایی مدیا کوئری موبایل */
-@media (max-width: 768px) {
+/* اصلاحات نهایی مدیا کوئری تبلت و موبایل */
+@media (max-width: 992px) {
+  #nav, .btn-header {
+    display: none !important;
+  }
+  
+  #burger {
+    display: flex !important;
+  }
+
   .about-inner .about-img-col,
   .grad-border-about {
     display: none !important;
@@ -1337,11 +1354,21 @@ html[dir="rtl"] .mobile-menu.open {
     text-align: center;
   }
 
-  /* فیکس کردن ابعاد لوگو در موبایل */
+  /* پایه استایل لوگو در موبایل و تبلت برای حالت انگلیسی */
   header .logo {
-    font-size: 1.15rem !important;
+    font-size: 1.12rem !important;
     gap: 0.5rem !important;
     flex-wrap: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    line-height: 0.9 !important; /* تراز وسط دقیق مخصوص فونت انگلیسی */
+  }
+
+  header .logo-img {
+    margin-top: -5px;
+    width: auto !important;
+    display: block !important;
   }
 
   /* مخفی کردن دکمه دسکتاپ در موبایل */
@@ -1349,7 +1376,7 @@ html[dir="rtl"] .mobile-menu.open {
     display: none !important;
   }
 
-  /* کانتینر دکمه زبان موبایل با فاصله اصولی درون منوی همبرگری */
+  /* کانتینر دکمه زبان موبایل درون منوی همبرگری */
   .menu-lang-mobile {
     width: 100% !important;
     margin-top: 1.5rem !important;
@@ -1357,7 +1384,7 @@ html[dir="rtl"] .mobile-menu.open {
     justify-content: center !important;
   }
 
-  /* استایل کپسولی و شیک دکمه زبان موبایل */
+  /* استایل کپسولی دکمه زبان موبایل */
   .btn-lang-mob {
     background: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(8px) !important;
