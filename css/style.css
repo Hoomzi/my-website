@@ -123,7 +123,7 @@ header.scrolled {
 }
 
 .logo-img {
-  height: 32px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
@@ -240,11 +240,11 @@ nav a.active::after {
 }
 
 .mob-cta {
-  margin-top: auto;
+  margin-top: 12px;
   text-align: center;
   padding: 0.9rem;
   border-radius: 12px;
-  background: var(--grad-main);
+  background:darkred;
   font-weight: 600;
 }
 
@@ -1197,66 +1197,89 @@ footer {
    ۱۵. اختصاصی سیستم دوزبانه (MULTILINGUAL & RTL HELPER CLASSES)
    ========================================================================== */
 
-/* استایل دکمه جابجایی زبان در هدر */
+/* استایل دکمه زبان در دسکتاپ */
 .lang-switch-wrap {
-  margin-left: auto;
-  margin-right: 1.5rem;
-}
-.btn-lang {
-  font-family: inherit;
-  font-size: 0.78rem;
-  font-weight: 700;
-padding: 5px 10px 5px 10px;
-  background: var(--card);
-  color: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all var(--tr);
-}
-.btn-lang:hover {
-  background: var(--white);
-  color: var(--bg);
+  margin-left: 1.5rem;
+  display: block;
+  flex-shrink: 0; /* جلوگیری از فشرده شدن دکمه در ابعاد کوچک دسکتاپ */
 }
 
-/* ساختار قرینه‌سازی استایل‌ها در حالت راست‌چین بدون تخریب کدهای اصلی */
+.btn-lang {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--border) !important;
+  padding: 8px 16px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  border-radius: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all var(--tr) !important;
+  cursor: pointer !important;
+}
+
+.btn-lang:hover {
+  background: var(--white) !important;
+  color: var(--bg) !important;
+}
+
+/* مدیریت فضای هدر در دسکتاپ کوچک و تبلت برای جلوگیری از شکستن منو در حالت انگلیسی */
+@media (min-width: 769px) {
+  .header-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  
+  #nav {
+    display: flex !important;
+    gap: 1.2rem !important; /* بهینه‌سازی موقت فاصله لینک‌ها در تبلت */
+    flex-wrap: nowrap !important;
+  }
+
+  html:not([dir="rtl"]) #nav {
+    margin-left: auto !important; /* هل دادن ناوبری به سمت راست در انگلیسی */
+    margin-right: 1rem !important;
+  }
+
+  html[dir="rtl"] #nav {
+    margin-right: auto !important; /* هل دادن ناوبری به سمت چپ در فارسی */
+    margin-left: 1rem !important;
+  }
+}
+
+/* ساختار قرینه‌سازی استایل‌ها در حالت راست‌چین (RTL) */
 html[dir="rtl"] {
   font-family: var(--font-fa);
 }
 html[dir="rtl"] body {
   font-family: var(--font-fa);
 }
-html[dir="rtl"] .logo {
-  margin-right: 0;
-}
 html[dir="rtl"] .lang-switch-wrap {
-  margin-left: 1.5rem;
-  margin-right: auto;
-}
-html[dir="rtl"] .btn-header {
   margin-left: 0;
-}
-html[dir="rtl"] .slide-tag::before {
-  margin-left: 0.5rem;
-  margin-right: 0;
-}
-html[dir="rtl"] .fb1 {
-  left: auto;
-  right: -60px;
+  margin-right: 1.5rem;
 }
 html[dir="rtl"] .service-card,
 html[dir="rtl"] .section-head,
 html[dir="rtl"] .about-content,
 html[dir="rtl"] .contact-info,
-html[dir="rtl"] .form-group {
-  text-align: right;
+html[dir="rtl"] .form-group,
+html[dir="rtl"] .footer-col,
+html[dir="rtl"] .footer-bottom {
+  text-align: right !important;
+}
+html[dir="rtl"] .footer-links li {
+  justify-content: flex-start !important;
+}
+html[dir="rtl"] .footer-bottom {
+  flex-direction: row-reverse !important;
 }
 html[dir="rtl"] .service-icon-wrap {
   margin-left: auto;
   margin-right: 0;
-}
-html[dir="rtl"] .service-list li {
-  display: flex;
 }
 html[dir="rtl"] .service-list li::before {
   margin-left: 0.5rem;
@@ -1273,6 +1296,19 @@ html[dir="rtl"] .about-badge {
 html[dir="rtl"] .testi-card {
   text-align: right;
 }
+
+/* تنظیم تراز پیش‌فرض فوتر برای حالت انگلیسی (چپ‌چین LTR) */
+html:not([dir="rtl"]) .footer-col,
+html:not([dir="rtl"]) .footer-bottom {
+  text-align: left !important;
+}
+html:not([dir="rtl"]) .footer-links li {
+  justify-content: flex-start !important;
+}
+html:not([dir="rtl"]) .footer-bottom {
+  flex-direction: row !important;
+}
+
 html[dir="rtl"] .wa-float {
   right: auto;
   left: 2rem;
@@ -1288,29 +1324,63 @@ html[dir="rtl"] .mobile-menu.open {
   right: auto;
 }
 
+/* اصلاحات نهایی مدیا کوئری موبایل */
 @media (max-width: 768px) {
-  html[dir="rtl"] .slide-tag {
-    justify-content: center;
-  }
-  html[dir="rtl"] .fb1 {
-    right: auto;
-    left: 50%;
-  }
-  
-}
-@media (max-width: 768px) {
-  /* ... کدهای قبلی مدیا کوئری شما ... */
-
-  /* مخفی کردن کامل ستون تصویر درباره من در موبایل */
   .about-inner .about-img-col,
   .grad-border-about {
     display: none !important;
   }
 
-  /* تنظیم ساختار متنی درباره من برای پر کردن تمام عرض صفحه */
   .about-inner {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
     text-align: center;
+  }
+
+  /* فیکس کردن ابعاد لوگو در موبایل */
+  header .logo {
+    font-size: 1.15rem !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* مخفی کردن دکمه دسکتاپ در موبایل */
+  header .header-inner > .lang-switch-wrap {
+    display: none !important;
+  }
+
+  /* کانتینر دکمه زبان موبایل با فاصله اصولی درون منوی همبرگری */
+  .menu-lang-mobile {
+    width: 100% !important;
+    margin-top: 1.5rem !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* استایل کپسولی و شیک دکمه زبان موبایل */
+  .btn-lang-mob {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    color: var(--white) !important;
+    border: 1px solid var(--border) !important;
+    padding: 12px 24px !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all var(--tr) !important;
+  }
+
+  .btn-lang-mob:active {
+    background: var(--white) !important;
+    color: var(--bg) !important;
+  }
+
+  html[dir="rtl"] .slide-tag {
+    justify-content: center;
   }
 }

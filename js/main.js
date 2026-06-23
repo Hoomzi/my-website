@@ -219,15 +219,15 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('site_lang', lang);
   }
 
-  // رویداد دکمه سوییچ زبان
-  const langBtn = document.getElementById('langBtn');
-  if (langBtn) {
-    langBtn.addEventListener('click', function() {
+ // رویداد دکمه سوییچ زبان (هم دسکتاپ و هم موبایل)
+  document.querySelectorAll('#langBtn, #langBtnMob, .btn-lang').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
       currentLang = currentLang === 'en' ? 'fa' : 'en';
       updateLanguage(currentLang);
       setTimeout(tUpdate, 50); // سینک مجدد متغیرهای اسلایدر پس از تغییر زبان
     });
-  }
+  });
 
   // اجرای اولیه زبان انتخابی
   updateLanguage(currentLang);
