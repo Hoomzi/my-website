@@ -1410,4 +1410,8 @@ html[dir="rtl"] .mobile-menu.open {
   html[dir="rtl"] .slide-tag {
     justify-content: center;
   }
+      .phone-number {
+    direction: ltr !important;
+    display: inline-block;
+}
 }
