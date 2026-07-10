@@ -1410,14 +1410,9 @@ html[dir="rtl"] .mobile-menu.open {
   html[dir="rtl"] .slide-tag {
     justify-content: center;
   }
-      .phone-number {
+     .phone-number, bdi.phone-number {
     direction: ltr !important;
+    unicode-bidi: isolate-override !important;
     display: inline-block !important;
-    unicode-bidi: bidi-override !important;
-}
-
-.contact-item-text span {
-    direction: ltr !important;
-    display: inline-block !important;
-    unicode-bidi: bidi-override !important;
+    text-align: left !important;
 }
