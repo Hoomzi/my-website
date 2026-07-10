@@ -1412,6 +1412,12 @@ html[dir="rtl"] .mobile-menu.open {
   }
       .phone-number {
     direction: ltr !important;
-    display: inline-block;
+    display: inline-block !important;
+    unicode-bidi: bidi-override !important;
 }
+
+.contact-item-text span {
+    direction: ltr !important;
+    display: inline-block !important;
+    unicode-bidi: bidi-override !important;
 }
