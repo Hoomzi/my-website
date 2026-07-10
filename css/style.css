@@ -256,7 +256,7 @@ nav a.active::after {
   display: flex;
   align-items: center;
   /* اضافه شدن عکس پس‌زمینه به کل هیرو سکشن */
-  background-image: linear-gradient(rgba(10, 10, 25, 0.75), rgba(10, 10, 25, 0.85)), url('../images/background.png');
+  background-image: linear-gradient(rgba(10, 10, 25, 0.80), rgba(10, 10, 25, 0.90)), url('../images/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
