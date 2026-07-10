@@ -249,12 +249,18 @@ nav a.active::after {
 }
 
 /* ── ۵. بخش هیرو (HERO SECTION) ── */
+/* ── ۵. بخش هیرو (HERO SECTION) ── */
 .hero {
   padding: 8rem 0 6rem;
   position: relative;
   min-height: 95vh;
   display: flex;
   align-items: center;
+  /* اضافه شدن عکس پس‌زمینه به کل هیرو سکشن */
+  background-image: linear-gradient(rgba(10, 10, 25, 0.75), rgba(10, 10, 25, 0.85)), url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-slider {
@@ -263,7 +269,8 @@ nav a.active::after {
 
 .slide {
   display: none;
-  grid-template-columns: 1.2fr 0.8fr;
+  /* تغییر چیدمان از دو ستونه به تک ستونه برای وسط‌چین شدن محتوا */
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 4rem;
 }
@@ -282,6 +289,13 @@ nav a.active::after {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hero .slide-content {
+  width: 100%;
+  max-width: 850px;     /* جلوگیری از کشیده شدن بیش از حد متن */
+  margin: 0 auto;       /* وسط‌چین کردن باکس متن در صفحه */
+  text-align: center;   /* وسط‌چین کردن متون */
 }
 
 .slide-tag {
@@ -307,7 +321,7 @@ nav a.active::after {
 }
 
 .slide-content h1 {
-  font-size: 2.6rem;
+  font-size: 3rem;     /* کمی بزرگتر برای جلوه بهتر در حالت تک ستونه */
   font-weight: 800;
   line-height: 1.35;
   letter-spacing: 1px;
@@ -322,15 +336,16 @@ nav a.active::after {
 }
 
 .slide-content p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--muted);
-  max-width: 580px;
-  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin: 0 auto 2.5rem; /* وسط‌چین شدن پاراگراف */
   line-height: 1.7;
 }
 
 .hero-btns {
   display: flex;
+  justify-content: center; /* وسط‌چین کردن دکمه‌ها */
   gap: 1.2rem;
 }
 
@@ -341,6 +356,7 @@ nav a.active::after {
   border-radius: 50px;
   background: var(--grad-purple);
   box-shadow: 0 4px 20px rgba(199, 125, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
 .btn-grad:hover {
@@ -348,51 +364,7 @@ nav a.active::after {
   box-shadow: 0 8px 25px rgba(199, 125, 255, 0.5);
 }
 
-.slide-img-frame {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.profile-hero-wrap {
-  position: relative;
-  z-index: 2;
-}
-
-.grad-border-hero {
-  padding: 4px;
-  background: var(--grad-hero);
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-}
-
-.grad-border-hero img {
-  display: block;
-  width: 288px;
-  height: 404px;
-  object-fit: cover;
-  border-radius: 28px;
-}
-
-.hero-float-badge {
-  position: absolute;
-  background: rgba(22, 22, 42, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  padding: 0.8rem 1.2rem;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.fb1 {
-  bottom: 30px;
-  left: -60px;
-}
+/* کدهای مربوط به فریم عکس قدیمی (slide-img-frame و کلاس‌های درون آن) به دلیل حذف عکس کاملاً پاک شدند */
 
 /* ── ۶. بخش آمار (STATS BAND) ── */
 .stats-band {
