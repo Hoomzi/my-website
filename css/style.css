@@ -292,9 +292,16 @@ nav a.active::after {
 
 .hero .slide-content {
   width: 100%;
-  max-width: 850px;     /* جلوگیری از کشیده شدن بیش از حد متن */
-  margin: 0 auto;       /* وسط‌چین کردن باکس متن در صفحه */
-  text-align: center;   /* وسط‌چین کردن متون */
+  max-width: 650px;     /* عرض باکس متن هماهنگ با طرح قبلی */
+  margin: 0;            /* حذف تراز وسط برای چسبیدن به سمت چپ */
+  text-align: left;     /* چپ‌چین شدن متن‌ها در حالت انگلیسی */
+}
+
+/* اصلاح تراز دکمه‌ها برای چسبیدن به سمت چپ */
+.hero .hero-btns {
+  display: flex;
+  justify-content: flex-start; /* دکمه‌ها از سمت چپ شروع شوند */
+  gap: 1.2rem;
 }
 
 .slide-tag {
