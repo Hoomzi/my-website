@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
       foot_heart: "Built with \u2665 and a lot of attention to detail"
     },
     fa: {
-     doc_title: "استودیو بیزینس‌وب — طراحی حرفه‌ای وردپرس و ووکامرس",
+      doc_title: "استودیو بیزینس‌وب — طراحی حرفه‌ای وردپرس و ووکامرس",
       nav_home: "خانه",
       nav_services: "خدمات",
       nav_about: "درباره من",
@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
       foot_wa: "چت در واتس‌آپ",
       foot_copy: "© ۲۰۲۵ استودیو بیزینس‌وب. تمامی حقوق محفوظ است.",
       foot_heart: "ساخته شده با ♥ و دقت فراوان در جزئیات"
+    }
   };
 
   const selectOptions = {
@@ -144,15 +145,18 @@ document.addEventListener('DOMContentLoaded', function() {
       { val: "seo", text: "SEO & Performance" }
     ],
     fa: [
-      { val: "", text: "\u062e\u062f\u0645\u062a \u0645\u0648\u0631\u062f \u0646\u0638\u0631 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f..." },
-      { val: "wordpress", text: "\u0637\u0631\u0627\u062d\u06cc \u0633\u0627\u06cc\u062a \u0648\u0631\u062f\u067e\u0631\u0633" },
-      { val: "woocommerce", text: "\u0641\u0631\u0648\u0634\u06af\u0627\u0647 \u0648\u0648\u06a9\u0627\u0645\u0631\u0633" },
-      { val: "landing", text: "\u0644\u0646\u062f\u06cc\u0646\u06af \u067e\u06cc\u062c" },
-      { val: "seo", text: "\u0633\u0626\u0648 \u0648 \u0628\u0647\u06cc\u0646\u0647\u200c\u0633\u0627\u0632\u06cc" }
+      { val: "", text: "خدمت مورد نظر را انتخاب کنید..." },
+      { val: "wordpress", text: "طراحی سایت وردپرس" },
+      { val: "woocommerce", text: "فروشگاه ووکامرس" },
+      { val: "landing", text: "لندینگ پیج" },
+      { val: "seo", text: "سئو و بهینه‌سازی" }
     ]
   };
 
   let currentLang = localStorage.getItem('site_lang') || 'en';
+
+  // تعریف اولیه متغیر تابع tUpdate برای جلوگیری از خطای عدم تعریف در کلیک دکمه‌ها
+  let tUpdate = function() {};
 
   function updateLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -165,31 +169,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.getElementById('heroTitle');
     if(heroTitle) {
       heroTitle.innerHTML = lang === 'fa'
-        ? `\u0633\u0627\u06cc\u062a\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 <span class="grad-txt">\u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u062f</span><br />\u0646\u0647 \u0641\u0642\u0637 \u062e\u0648\u0628 \u0628\u0647 \u0646\u0638\u0631 \u0645\u06cc\u200c\u0631\u0633\u062f`
+        ? `سایتی که برای شما <span class="grad-txt">کار می‌کند</span><br />نه فقط خوب به نظر برسد`
         : `WordPress Sites That <span class="grad-txt">Work for You</span><br />Not Just Look Good`;
     }
     const servTitle = document.getElementById('servTitle');
     if(servTitle) {
       servTitle.innerHTML = lang === 'fa'
-        ? `\u062e\u062f\u0645\u0627\u062a <span class="grad-txt">\u062a\u062e\u0635\u0635\u06cc</span>`
+        ? `خدمات <span class="grad-txt">تخصصی</span>`
         : `Expert <span class="grad-txt">Services</span>`;
     }
     const aboutTitle = document.getElementById('aboutTitle');
     if(aboutTitle) {
       aboutTitle.innerHTML = lang === 'fa'
-        ? `\u0645\u062a\u062e\u0635\u0635\u06cc \u06a9\u0647 \u0628\u0647 <span class="grad-txt">\u0631\u0634\u062f \u0648\u0627\u0642\u0639\u06cc \u0634\u0645\u0627</span> \u0627\u0647\u0645\u06cc\u062a \u0645\u06cc\u200c\u062f\u0647\u062f`
+        ? `متخصص وب که به <span class="grad-txt">رشد واقعی شما</span> اهمیت می‌دهد`
         : `A Developer Who Cares About<br /><span class="grad-txt">Your Real Results</span>`;
     }
     const testiTitle = document.getElementById('testiTitle');
     if(testiTitle) {
       testiTitle.innerHTML = lang === 'fa'
-        ? `\u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0686\u0647 <span class="grad-txt">\u0645\u06cc\u200c\u06af\u0648\u06cc\u0646\u062f</span>`
+        ? `مشتریان چه <span class="grad-txt">می‌گویند</span>`
         : `What Clients <span class="grad-txt">Say</span>`;
     }
     const contactTitle = document.getElementById('contactTitle');
     if(contactTitle) {
       contactTitle.innerHTML = lang === 'fa'
-        ? `\u0628\u06cc\u0627\u06cc\u06cc\u062f \u0627\u0632 \u067e\u0631\u0648\u0698\u0647\u200c\u062a\u0627\u0646 <span class="grad-txt">\u0628\u06af\u0648\u06cc\u06cc\u062f</span>`
+        ? `بیایید از پروژه‌تان <span class="grad-txt">بگویید</span>`
         : `Tell Me About Your <span class="grad-txt">Project</span>`;
     }
 
@@ -289,12 +293,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {threshold:0, rootMargin:'0px 0px -100px 0px'}).observe(aboutSection);
   }
 
-  // TESTIMONIALS
+  // TESTIMONIALS (اسلایدر نظرات مشتریان)
   var testiTrack = document.getElementById('testiTrack');
   var testiCards = document.querySelectorAll('.testi-card');
   var tCurrent = 0;
   function tVisible(){ return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
-  function tUpdate(){
+  
+  // تعریف بدنه اصلی تابع آپدیت جهت حرکت اسلایدر
+  tUpdate = function() {
+    if (!testiTrack) return;
     var vis = tVisible();
     var max = Math.max(0, testiCards.length - vis);
     tCurrent = Math.min(tCurrent, max);
@@ -303,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var cardW = (trackW - gap * (vis - 1)) / vis;
     let directionFactor = document.documentElement.getAttribute('dir') === 'rtl' ? 1 : -1;
     testiTrack.style.transform = 'translateX(' + (directionFactor * (tCurrent * (cardW + gap))) + 'px)';
-  }
+  };
 
   var btnNext = document.getElementById('tNext');
   var btnPrev = document.getElementById('tPrev');
@@ -328,33 +335,45 @@ document.addEventListener('DOMContentLoaded', function() {
   const successMsg = document.getElementById("formSuccess");
   const errorMsg = document.getElementById("formError");
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    submitBtn.textContent = currentLang === 'fa' ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0631\u0633\u0627\u0644..." : "Sending...";
-    submitBtn.disabled = true;
-    successMsg.style.display = "none";
-    errorMsg.style.display = "none";
+  if (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      submitBtn.textContent = currentLang === 'fa' ? "در حال ارسال..." : "Sending...";
+      submitBtn.disabled = true;
+      successMsg.style.display = "none";
+      errorMsg.style.display = "none";
 
-    try {
-      const response = await fetch("https://formspree.io/f/xjgaqkbr", {
-        method: "POST",
-        headers: { "Accept": "application/json" },
-        body: new FormData(form)
-      });
-      if (response.ok) {
-        successMsg.style.display = "block";
-        form.reset();
-      } else {
+      try {
+        const response = await fetch("https://formspree.io/f/xjgaqkbr", {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form)
+        });
+        if (response.ok) {
+          successMsg.style.display = "block";
+          form.reset();
+        } else {
+          errorMsg.style.display = "block";
+        }
+      } catch (error) {
         errorMsg.style.display = "block";
       }
-    } catch (error) {
-      errorMsg.style.display = "block";
-    }
-    submitBtn.textContent = currentLang === 'fa' ? "\u0627\u0631\u0633\u0627\u0644 \u067e\u06cc\u0627\u0645 \u2190" : "Send Message \u2192";
-    submitBtn.disabled = false;
-  });
+      submitBtn.textContent = currentLang === 'fa' ? "ارسال پیام ←" : "Send Message \u2192";
+      submitBtn.disabled = false;
+    });
+  }
 
   // SMART SMOOTH SCROLL
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var t=document.querySelector(a.getAttribute('href')); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); } }); });
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var targetId = a.getAttribute('href');
+      if (targetId === '#') return;
+      var t=document.querySelector(targetId);
+      if(t){
+        e.preventDefault();
+        t.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
 
 });
