@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
       foot_quick: "Quick Links",
       foot_wa: "Chat on WhatsApp",
       foot_copy: "\u00a9 2025 BusinessWeb Studio. All rights reserved.",
-      foot_heart: "Built with \u2665 and a lot of attention to detail"
+      foot_heart: "Built with Hooman Keshavarzi"
     },
     fa: {
       doc_title: "استودیو بیزینس‌وب — طراحی حرفه‌ای وردپرس و ووکامرس",
