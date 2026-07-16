@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
       nav_home: "Home",
       nav_services: "Services",
       nav_about: "About",
-      nav_portfolio: "Portfolio",
       nav_contact: "Contact",
       nav_quote: "Start a Project",
       hero_tag: "WordPress & WooCommerce Expert",
@@ -73,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
       nav_home: "خانه",
       nav_services: "خدمات",
       nav_about: "درباره من",
-      nav_portfolio: "نمونه کارها",
       nav_contact: "تماس با من",
       nav_quote: "شروع پروژه",
       hero_tag: "متخصص وردپرس و ووکامرس",
@@ -245,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var navLinks = document.querySelectorAll('nav a');
   window.addEventListener('scroll', function(){
     header.classList.toggle('scrolled', window.scrollY > 60);
-    var sections=['home','services','about','portfolio','contact'], current='';
+    var sections=['home','services','about','contact'], current='';
     sections.forEach(function(id){ var s=document.getElementById(id); if(s && window.scrollY>=s.offsetTop-130) current=id; });
     navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+current); });
   }, {passive:true});
