@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
       nav_home: "Home",
       nav_services: "Services",
       nav_about: "About",
+      nav_portfolio: "Portfolio",
       nav_contact: "Contact",
       nav_quote: "Start a Project",
       hero_tag: "WordPress & WooCommerce Expert",
@@ -58,20 +59,33 @@ document.addEventListener('DOMContentLoaded', function() {
       f_email: "Email Address",
       f_service: "Which Service Do You Need?",
       f_details: "Tell Me About Your Project",
-      f_send: "Send Message \u2192",
-      f_success: "\u2713 Message received! I'll get back to you within 24 hours.",
-      f_error: "\u26a0 Something went wrong. Please try again or reach me on WhatsApp.",
+      f_send: "Send Message →",
+      f_success: "✓ Message received! I'll get back to you within 24 hours.",
+      f_error: "⚠ Something went wrong. Please try again or reach me on WhatsApp.",
       foot_brand: "Custom WordPress design and WooCommerce development for businesses that take their online presence seriously.",
       foot_quick: "Quick Links",
       foot_wa: "Chat on WhatsApp",
-      foot_copy: "\u00a9 2025 BusinessWeb Studio. All rights reserved.",
-      foot_heart: "Built with Hooman Keshavarzi"
+      foot_copy: "© 2025 BusinessWeb Studio. All rights reserved.",
+      foot_heart: "Built with ♥ and a lot of attention to detail",
+      faq_tag: "FAQ",
+      faq_title: "Frequently Asked Questions",
+      faq_q1: "How long does it take to build a WordPress website?",
+      faq_a1: "Most WordPress websites are delivered within 7–14 business days. Landing pages in 3–5 days. I always provide a clear timeline before starting.",
+      faq_q2: "Do you work with international clients?",
+      faq_a2: "Yes — I work with clients worldwide via WhatsApp or email, across different time zones.",
+      faq_q3: "What makes BusinessWeb Studio different from larger agencies?",
+      faq_a3: "Competitive pricing, faster delivery, and direct communication with the developer — not account managers. Every project gets personal attention.",
+      faq_q4: "Do you offer support after the website is launched?",
+      faq_a4: "Yes. I provide post-launch support, maintenance, and ongoing improvements. Long-term relationships are something I genuinely value.",
+      faq_q5: "Can you work on an existing WordPress site?",
+      faq_a5: "Absolutely. I can redesign, optimize, fix bugs, or add new features to any existing WordPress or WooCommerce site."
     },
     fa: {
       doc_title: "استودیو بیزینس‌وب — طراحی حرفه‌ای وردپرس و ووکامرس",
       nav_home: "خانه",
       nav_services: "خدمات",
       nav_about: "درباره من",
+      nav_portfolio: "نمونه کارها",
       nav_contact: "تماس با من",
       nav_quote: "شروع پروژه",
       hero_tag: "متخصص وردپرس و ووکامرس",
@@ -82,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
       stat_3: "سال تجربه",
       stat_4: "مشتری راضی",
       serv_tag: "خدمات",
-      serv_desc: "هر پروژه برای من یک سرمایه‌گذاری بلندمدت است، نه یک کار تحویل‌دادن. اینجا ببینید چطور به رشد آنلاین کسب‌وکار شما کمک می‌کنم.",
+      serv_desc: "هر پروژه برای من یک سرمایه‌گذاری بلندمدت است، نه یک کار تحویل‌دادنی. اینجا ببینید چطور به رشد آنلاین کسب‌وکار شما کمک می‌کنم.",
       s1_title: "طراحی سایت وردپرس",
       s1_desc: "یک سایت که حول اهداف شما ساخته شده، نه یک قالب آماده. وب‌سایت‌های وردپرس اختصاصی طراحی می‌کنم که هویت برند شما را منعکس کرده و بازدیدکننده را به سمت اقدام هدایت می‌کنند.",
       s1_l1: "توسعه پوسته کاملاً اختصاصی",
@@ -129,8 +143,20 @@ document.addEventListener('DOMContentLoaded', function() {
       foot_brand: "طراحی اختصاصی وردپرس و توسعه ووکامرس برای کسب‌وکارهایی که حضور آنلاینشان را جدی می‌گیرند.",
       foot_quick: "دسترسی سریع",
       foot_wa: "چت در واتس‌آپ",
-      foot_copy: "© ۲۰۲۵ .تمامی حقوق این سایت برای بیزینس وب استودیو محفوظ است",
-      foot_heart: "ساخته شده توسط هومن کشاورزی"
+      foot_copy: "© ۲۰۲۵ استودیو بیزینس‌وب. تمامی حقوق محفوظ است.",
+      foot_heart: "ساخته شده با ♥ و دقت فراوان در جزئیات",
+      faq_tag: "سوالات متداول",
+      faq_title: "سوالات متداول",
+      faq_q1: "ساخت یک سایت وردپرس چقدر طول می‌کشد؟",
+      faq_a1: "بیشتر سایت‌ها ظرف ۷ تا ۱۴ روز کاری تحویل داده می‌شوند. لندینگ پیج در ۳ تا ۵ روز آماده می‌شود. قبل از شروع تایم‌لاین شفاف ارائه می‌دهم.",
+      faq_q2: "آیا با مشتریان بین‌المللی کار می‌کنید؟",
+      faq_a2: "بله — با مشتریان در سرتاسر دنیا کار می‌کنم. ارتباط عمدتاً واتس‌آپ یا ایمیل است.",
+      faq_q3: "تفاوت بیزینس‌وب استودیو با آژانس‌های بزرگ چیست؟",
+      faq_a3: "قیمت رقابتی، تحویل سریع‌تر و ارتباط مستقیم با دولوپر — نه مدیران حساب. هر پروژه توجه شخصی دارد.",
+      faq_q4: "آیا بعد از لانچ سایت پشتیبانی ارائه می‌دهید؟",
+      faq_a4: "بله. پشتیبانی بعد از لانچ، نگه‌داری و بهبودهای مستمر را انجام می‌دهم. روابط بلندمدت با مشتریان ارزش ویژه‌ای برایم دارد.",
+      faq_q5: "آیا روی سایت وردپرس موجود کار می‌کنید؟",
+      faq_a5: "بله. بازطراحی، بهینه‌سازی، رفع باگ یا افزودن قابلیت روی سایت موجود شما."
     }
   };
 
@@ -153,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let currentLang = localStorage.getItem('site_lang') || 'en';
 
-  // تعریف اولیه متغیر تابع tUpdate برای جلوگیری از خطای عدم تعریف در کلیک دکمه‌ها
+  // تعریف اولیه tUpdate برای جلوگیری از خطا هنگام کلیک دکمه زبان
   let tUpdate = function() {};
 
   function updateLanguage(lang) {
@@ -164,37 +190,50 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    // عنوان‌های ترکیبی که نیاز به HTML دارند
     const heroTitle = document.getElementById('heroTitle');
-    if(heroTitle) {
+    if (heroTitle) {
       heroTitle.innerHTML = lang === 'fa'
         ? `سایتی که برای شما <span class="grad-txt">کار می‌کند</span><br />نه فقط خوب به نظر برسد`
         : `WordPress Sites That <span class="grad-txt">Work for You</span><br />Not Just Look Good`;
     }
+
     const servTitle = document.getElementById('servTitle');
-    if(servTitle) {
+    if (servTitle) {
       servTitle.innerHTML = lang === 'fa'
         ? `خدمات <span class="grad-txt">تخصصی</span>`
         : `Expert <span class="grad-txt">Services</span>`;
     }
+
     const aboutTitle = document.getElementById('aboutTitle');
-    if(aboutTitle) {
+    if (aboutTitle) {
       aboutTitle.innerHTML = lang === 'fa'
         ? `متخصص وب که به <span class="grad-txt">رشد واقعی شما</span> اهمیت می‌دهد`
         : `A Developer Who Cares About<br /><span class="grad-txt">Your Real Results</span>`;
     }
+
     const testiTitle = document.getElementById('testiTitle');
-    if(testiTitle) {
+    if (testiTitle) {
       testiTitle.innerHTML = lang === 'fa'
         ? `مشتریان چه <span class="grad-txt">می‌گویند</span>`
         : `What Clients <span class="grad-txt">Say</span>`;
     }
+
+    const faqTitle = document.getElementById('faqTitle');
+    if (faqTitle) {
+      faqTitle.innerHTML = lang === 'fa'
+        ? `سوالات متداول <span class="grad-txt">پرسیده شده</span>`
+        : `Frequently Asked <span class="grad-txt">Questions</span>`;
+    }
+
     const contactTitle = document.getElementById('contactTitle');
-    if(contactTitle) {
+    if (contactTitle) {
       contactTitle.innerHTML = lang === 'fa'
         ? `بیایید از پروژه‌تان <span class="grad-txt">بگویید</span>`
         : `Tell Me About Your <span class="grad-txt">Project</span>`;
     }
 
+    // پر کردن درخواست خدمات در فرم
     const selectEl = document.getElementById('formService');
     if (selectEl) {
       selectEl.innerHTML = '';
@@ -206,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
+    // تنظیم جهت و زبان صفحه
     if (lang === 'fa') {
       document.documentElement.setAttribute('dir', 'rtl');
       document.documentElement.setAttribute('lang', 'fa');
@@ -217,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('site_lang', lang);
   }
 
+  // رویداد دکمه تغییر زبان (دسکتاپ و موبایل)
   document.querySelectorAll('#langBtn, #langBtnMob, .btn-lang').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
@@ -228,76 +269,90 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updateLanguage(currentLang);
 
-  // REVEAL
-  var revealEls = document.querySelectorAll('.service-card,.section-head,.about-content,.about-img-col,.port-card,.testi-card,.contact-info,.contact-form-wrap,.stat-item');
-  revealEls.forEach(function(el){ el.classList.add('reveal'); });
-  var ro = new IntersectionObserver(function(entries, obs){
-    entries.forEach(function(entry, i){
-      if(entry.isIntersecting){ setTimeout(function(){ entry.target.classList.add('visible'); }, i*60); obs.unobserve(entry.target); }
+  // ── انیمیشن نمایش تدریجی المان‌ها (Reveal on scroll) ──
+  var revealEls = document.querySelectorAll('.service-card,.section-head,.about-content,.about-img-col,.port-card,.testi-card,.contact-info,.contact-form-wrap,.stat-item,.faq-item');
+  revealEls.forEach(function(el) { el.classList.add('reveal'); });
+  var ro = new IntersectionObserver(function(entries, obs) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function() { entry.target.classList.add('visible'); }, i * 60);
+        obs.unobserve(entry.target);
+      }
     });
-  }, {threshold:0.08});
-  revealEls.forEach(function(el){ ro.observe(el); });
+  }, { threshold: 0.08 });
+  revealEls.forEach(function(el) { ro.observe(el); });
 
-  // HEADER
+  // ── هدر: اسکرول و ناوبری فعال ──
   var header = document.getElementById('header');
   var navLinks = document.querySelectorAll('nav a');
-  window.addEventListener('scroll', function(){
+  window.addEventListener('scroll', function() {
     header.classList.toggle('scrolled', window.scrollY > 60);
-    var sections=['home','services','about','contact'], current='';
-    sections.forEach(function(id){ var s=document.getElementById(id); if(s && window.scrollY>=s.offsetTop-130) current=id; });
-    navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+current); });
-  }, {passive:true});
+    var sections = ['home', 'services', 'about', 'faq', 'contact'], current = '';
+    sections.forEach(function(id) {
+      var s = document.getElementById(id);
+      if (s && window.scrollY >= s.offsetTop - 130) current = id;
+    });
+    navLinks.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
 
-  // BURGER
+  // ── منوی همبرگری موبایل ──
   var burger = document.getElementById('burger');
   var mobileMenu = document.getElementById('mobileMenu');
-  function menuClose(){ mobileMenu.classList.remove('open'); burger.classList.remove('open'); }
-  function menuOpen(){ mobileMenu.classList.add('open'); burger.classList.add('open'); }
-  burger.addEventListener('click', function(e){ e.stopPropagation(); mobileMenu.classList.contains('open') ? menuClose() : menuOpen(); });
-  mobileMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', menuClose); });
-  document.addEventListener('click', function(e){ if(!header.contains(e.target)) menuClose(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') menuClose(); });
+  function menuClose() { mobileMenu.classList.remove('open'); burger.classList.remove('open'); }
+  function menuOpen() { mobileMenu.classList.add('open'); burger.classList.add('open'); }
+  burger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    mobileMenu.classList.contains('open') ? menuClose() : menuOpen();
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', menuClose); });
+  document.addEventListener('click', function(e) { if (!header.contains(e.target)) menuClose(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') menuClose(); });
 
-  // COUNTERS
-  var counterFired = {};
+  // ── شمارنده‌های آماری (Counters) ──
   function runCounter(el) {
-    if (counterFired[el.id || el.dataset.target + Math.random()]) return;
+    if (el._fired) return;
     el._fired = true;
-    var target = +el.dataset.target, step = target / (1800/16), cur = 0;
-    var t = setInterval(function(){ cur = Math.min(cur+step, target); el.textContent = Math.floor(cur); if(cur>=target) clearInterval(t); }, 16);
+    var target = +el.dataset.target, step = target / (1800 / 16), cur = 0;
+    var t = setInterval(function() {
+      cur = Math.min(cur + step, target);
+      el.textContent = Math.floor(cur);
+      if (cur >= target) clearInterval(t);
+    }, 16);
   }
-  var co = new IntersectionObserver(function(entries, obs){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting || entry.target._fired) return;
+  var co = new IntersectionObserver(function(entries, obs) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting || entry.target._fired) return;
       runCounter(entry.target);
       obs.unobserve(entry.target);
     });
-  }, {threshold:0, rootMargin:'0px 0px -50px 0px'});
-  document.querySelectorAll('.counter').forEach(function(el){ co.observe(el); });
+  }, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.counter').forEach(function(el) { co.observe(el); });
 
-  // SKILL BARS
+  // ── نوار مهارت‌ها ──
   var aboutSection = document.getElementById('about');
   var skillsFired = false;
   function fireSkills() {
     if (skillsFired) return;
     skillsFired = true;
-    document.querySelectorAll('.skill-fill').forEach(function(f){ f.style.width = f.dataset.w + '%'; });
+    document.querySelectorAll('.skill-fill').forEach(function(f) { f.style.width = f.dataset.w + '%'; });
   }
-  if(aboutSection){
-    new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){ fireSkills(); obs.unobserve(entry.target); }
+  if (aboutSection) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { fireSkills(); obs.unobserve(entry.target); }
       });
-    }, {threshold:0, rootMargin:'0px 0px -100px 0px'}).observe(aboutSection);
+    }, { threshold: 0, rootMargin: '0px 0px -100px 0px' }).observe(aboutSection);
   }
 
-  // TESTIMONIALS (اسلایدر نظرات مشتریان)
+  // ── اسلایدر نظرات مشتریان ──
   var testiTrack = document.getElementById('testiTrack');
   var testiCards = document.querySelectorAll('.testi-card');
   var tCurrent = 0;
-  function tVisible(){ return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
-  
-  // تعریف بدنه اصلی تابع آپدیت جهت حرکت اسلایدر
+  function tVisible() { return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
+
+  // tUpdate اینجا تعریف می‌شود تا در کلیک دکمه زبان هم قابل فراخوانی باشد
   tUpdate = function() {
     if (!testiTrack) return;
     var vis = tVisible();
@@ -306,35 +361,36 @@ document.addEventListener('DOMContentLoaded', function() {
     var gap = 24;
     var trackW = testiTrack.parentElement.offsetWidth;
     var cardW = (trackW - gap * (vis - 1)) / vis;
-    let directionFactor = document.documentElement.getAttribute('dir') === 'rtl' ? 1 : -1;
+    // جهت حرکت برای RTL و LTR متفاوت است
+    var directionFactor = document.documentElement.getAttribute('dir') === 'rtl' ? 1 : -1;
     testiTrack.style.transform = 'translateX(' + (directionFactor * (tCurrent * (cardW + gap))) + 'px)';
   };
 
   var btnNext = document.getElementById('tNext');
   var btnPrev = document.getElementById('tPrev');
-  if(btnNext) btnNext.addEventListener('click', function(e){
+  if (btnNext) btnNext.addEventListener('click', function(e) {
     e.preventDefault();
     var max = Math.max(0, testiCards.length - tVisible());
     tCurrent = tCurrent < max ? tCurrent + 1 : 0;
     tUpdate();
   });
-  if(btnPrev) btnPrev.addEventListener('click', function(e){
+  if (btnPrev) btnPrev.addEventListener('click', function(e) {
     e.preventDefault();
     var max = Math.max(0, testiCards.length - tVisible());
     tCurrent = tCurrent > 0 ? tCurrent - 1 : max;
     tUpdate();
   });
-  window.addEventListener('resize', tUpdate, {passive:true});
+  window.addEventListener('resize', tUpdate, { passive: true });
   setTimeout(tUpdate, 100);
 
-  // FORM SPREE
+  // ── فرم تماس (Formspree) ──
   const form = document.getElementById("contactForm");
   const submitBtn = document.getElementById("submitBtn");
   const successMsg = document.getElementById("formSuccess");
   const errorMsg = document.getElementById("formError");
 
   if (form) {
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", async function(e) {
       e.preventDefault();
       submitBtn.textContent = currentLang === 'fa' ? "در حال ارسال..." : "Sending...";
       submitBtn.disabled = true;
@@ -356,20 +412,21 @@ document.addEventListener('DOMContentLoaded', function() {
       } catch (error) {
         errorMsg.style.display = "block";
       }
-      submitBtn.textContent = currentLang === 'fa' ? "ارسال پیام ←" : "Send Message \u2192";
+
+      submitBtn.textContent = currentLang === 'fa' ? "ارسال پیام ←" : "Send Message →";
       submitBtn.disabled = false;
     });
   }
 
-  // SMART SMOOTH SCROLL
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click',function(e){
+  // ── اسکرول روان برای لینک‌های داخلی ──
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
       var targetId = a.getAttribute('href');
       if (targetId === '#') return;
-      var t=document.querySelector(targetId);
-      if(t){
+      var t = document.querySelector(targetId);
+      if (t) {
         e.preventDefault();
-        t.scrollIntoView({behavior:'smooth',block:'start'});
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
