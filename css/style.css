@@ -1462,12 +1462,20 @@ html[dir="rtl"] .mobile-menu.open {
 }
 
 /* --- RTL / LTR Fixes --- */
-html[dir="rtl"] .faq-question,
+html[dir="rtl"] .faq-question {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
 html[dir="rtl"] .faq-answer {
   text-align: right;
 }
 
-html[dir="ltr"] .faq-question,
+html[dir="ltr"] .faq-question {
+  flex-direction: row;
+  text-align: left;
+}
+
 html[dir="ltr"] .faq-answer {
   text-align: left;
 }
