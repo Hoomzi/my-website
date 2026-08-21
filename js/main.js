@@ -78,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
       faq_q4: "Do you offer support after the website is launched?",
       faq_a4: "Yes. I provide post-launch support, maintenance, and ongoing improvements. Long-term relationships are something I genuinely value.",
       faq_q5: "Can you work on an existing WordPress site?",
-      faq_a5: "Absolutely. I can redesign, optimize, fix bugs, or add new features to any existing WordPress or WooCommerce site."
+      faq_a5: "Absolutely. I can redesign, optimize, fix bugs, or add new features to any existing WordPress or WooCommerce site.",
+      faq_q6: "How much does a website design project cost?",
+      faq_a6: "Website design pricing varies depending on your specific requirements, project complexity, requested features, and the estimated development time needed to build a tailored solution for your business."
     },
     fa: {
       doc_title: "استودیو بیزینس‌وب — طراحی حرفه‌ای وردپرس و ووکامرس",
