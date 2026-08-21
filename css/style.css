@@ -1433,11 +1433,12 @@ html[dir="rtl"] .mobile-menu.open {
   gap: 1rem;
   color: var(--white);
   user-select: none;
-  text-align: inherit;
 }
 
-.faq-question::-webkit-details-marker {
-  display: none;
+.faq-question::-webkit-details-marker,
+.faq-question::marker {
+  display: none !important;
+  content: "" !important;
 }
 
 .faq-question::after {
@@ -1458,10 +1459,9 @@ html[dir="rtl"] .mobile-menu.open {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.7;
-  text-align: inherit;
 }
 
-/* --- RTL / LTR Fixes --- */
+/* --- RTL / LTR Directions --- */
 html[dir="rtl"] .faq-question {
   flex-direction: row-reverse;
   text-align: right;
