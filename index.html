@@ -1,317 +1,493 @@
 <!doctype html>
 <html lang="en">
-  <html lang="fa" dir="rtl"></html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="doc_title">
-      BusinessWeb Studio — Expert WordPress Design
-    </title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;700;900&display=swap"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-  </head>
-  <body>
-    <header id="header">
-      <div class="container header-inner">
-        <a href="#home" class="logo"
-          ><img
-            src="images/logo.png"
-            alt="BusinessWeb Studio Logo"
-            class="logo-img"
-          />BusinessWeb Studio</a
-        >
-        <nav id="nav">
-          <a href="#home" data-i18n="nav_home" class="active">Home</a>
-          <a href="#services" data-i18n="nav_services">Services</a>
-          <a href="#about" data-i18n="nav_about">About</a>
-          <a href="#contact" data-i18n="nav_contact">Contact</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <div class="lang-switch-wrap">
-          <button id="langBtn" class="btn-lang">FA / EN</button>
-        </div>
+  <!-- ═══════════════════════════════════════════════
+       SEO — Primary Meta Tags
+  ═══════════════════════════════════════════════ -->
+  <title data-i18n="doc_title">BusinessWeb Studio — Custom WordPress Design & WooCommerce Development</title>
+  <meta name="description" content="Hooman Keshavarzi is a WordPress developer & WooCommerce specialist with 6+ years of experience. Fast, affordable, and results-driven websites for businesses worldwide." />
+  <meta name="keywords" content="WordPress design, WooCommerce development, landing page, SEO optimization, WordPress developer, طراحی وردپرس, ووکامرس, طراحی سایت حرفه‌ای" />
+  <meta name="author" content="Hooman Keshavarzi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://businesswebstudio.pro/" />
 
-        <a href="#contact" class="btn-header" data-i18n="nav_quote"
-          >Get a Quote</a
-        >
-        <button
-          class="burger"
-          id="burger"
-          type="button"
-          aria-label="Toggle menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-   <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" class="mob-link" data-i18n="nav_home">Home</a>
-        <a href="#services" class="mob-link" data-i18n="nav_services">Services</a>
-        <a href="#about" class="mob-link" data-i18n="nav_about">About</a>
-        <a href="#contact" class="mob-link" data-i18n="nav_contact">Contact</a>
-        <a href="#contact" class="mob-cta" data-i18n="nav_quote">Get a Quote</a>
-        <div class="menu-lang-mobile">
-          <button id="langBtnMob" class="btn-lang btn-lang-mob">🌐 FA / EN</button>
-        </div>
-      </div>
-      </div>
-    </header>
+  <!-- ═══════════════════════════════════════════════
+       Open Graph (Facebook, LinkedIn, Telegram)
+  ═══════════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://businesswebstudio.pro/" />
+  <meta property="og:title" content="BusinessWeb Studio — Custom WordPress Design & WooCommerce Development" />
+  <meta property="og:description" content="Fast, strategic WordPress websites and WooCommerce stores that look great and actually grow your business. Competitive pricing. Personal support." />
+  <meta property="og:image" content="https://businesswebstudio.pro/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fa_IR" />
+  <meta property="og:site_name" content="BusinessWeb Studio" />
 
-    <section id="home" class="hero">
-  <div class="hero-slider" id="heroSlider">
-    <div class="container slide active">
-      <div class="slide-content">
-        <span class="slide-tag" data-i18n="hero_tag">WordPress Engineering</span>
-        <h1 id="heroTitle">
-          High-Performance
-          <span class="grad-txt">WordPress Solutions</span><br />for Growing Businesses
-        </h1>
-        <p data-i18n="hero_desc">
-          I engineer scalable WordPress ecosystems that boost conversion
-          rates and streamline your operations. Let’s build an asset that
-          generates revenue.
-        </p>
-        <div class="hero-btns">
-          <a href="#services" class="btn-grad" data-i18n="hero_btn">Explore Services</a>
-        </div>
-      </div>
-      </div>
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════════════
+       Twitter / X Cards
+  ═══════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://businesswebstudio.pro/" />
+  <meta name="twitter:title" content="BusinessWeb Studio — Custom WordPress & WooCommerce" />
+  <meta name="twitter:description" content="Fast, strategic WordPress websites that look great and actually grow your business. Competitive pricing. Personal support." />
+  <meta name="twitter:image" content="https://businesswebstudio.pro/images/og-image.png" />
 
-    <div class="stats-band">
-      <div class="stat-item">
-        <div class="stat-num-wrap">
-          <strong class="counter" data-target="52">0</strong
-          ><span class="suf">+</span>
-        </div>
-        <p data-i18n="stat_1">Projects Delivered</p>
+  <!-- ═══════════════════════════════════════════════
+       Schema Markup — JSON-LD
+  ═══════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://businesswebstudio.pro/#business",
+        "name": "BusinessWeb Studio",
+        "description": "Custom WordPress design, WooCommerce development, landing pages, and SEO optimization for businesses worldwide.",
+        "url": "https://businesswebstudio.pro/",
+        "logo": "https://businesswebstudio.pro/images/logo.png",
+        "image": "https://businesswebstudio.pro/images/profile.jpg",
+        "telephone": "+37493996471",
+        "email": "hoomanvarzi@gmail.com",
+        "founder": {
+          "@type": "Person",
+          "name": "Hooman Keshavarzi",
+          "jobTitle": "WordPress Developer & Web Strategist",
+          "url": "https://www.linkedin.com/in/hooman-keshavarzi-536b96142/",
+          "knowsAbout": ["WordPress", "WooCommerce", "SEO", "Web Design", "Landing Pages"]
+        },
+        "areaServed": "Worldwide",
+        "priceRange": "$$",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Web Design & Development Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "WordPress Website Design",
+                "description": "Custom WordPress websites built around your goals, reflecting your brand and guiding visitors to take action."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "WooCommerce Online Store",
+                "description": "Full WooCommerce store setup with seamless checkout, payment gateways, and conversion-optimized product pages."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Landing Page Design",
+                "description": "High-converting landing pages for campaigns and product launches that turn clicks into revenue."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SEO & Performance Optimization",
+                "description": "Technical SEO and Core Web Vitals optimization to rank higher on Google and keep your site fast."
+              }
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "50",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://businesswebstudio.pro/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does it take to build a WordPress website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most WordPress websites are delivered within 7–14 business days depending on complexity. Landing pages can be ready in 3–5 days. I always provide a clear timeline before starting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you work with international clients?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — I work with clients worldwide. Most communication happens via WhatsApp or email, and I'm comfortable working across different time zones."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes BusinessWeb Studio different from larger agencies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You get competitive pricing, faster delivery, and direct communication with the developer — not account managers. Every project receives personal attention from start to finish."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer support after the website is launched?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. I provide post-launch support and can handle ongoing maintenance, updates, and improvements. Long-term client relationships are something I genuinely value."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you work on an existing WordPress site?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. I can redesign, optimize, fix bugs, or add new features to an existing WordPress or WooCommerce site."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://businesswebstudio.pro/#website",
+        "url": "https://businesswebstudio.pro/",
+        "name": "BusinessWeb Studio",
+        "description": "Custom WordPress design and WooCommerce development for businesses worldwide.",
+        "inLanguage": ["en", "fa"]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       Fonts & Styles
+  ═══════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;700;900&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════ -->
+  <header id="header" role="banner">
+    <div class="container header-inner">
+      <a href="#home" class="logo" aria-label="BusinessWeb Studio — Home">
+        <img src="images/logo.png" alt="BusinessWeb Studio Logo" class="logo-img" width="36" height="36" />
+        BusinessWeb Studio
+      </a>
+
+      <nav id="nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="nav_home" class="active">Home</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="lang-switch-wrap">
+        <button id="langBtn" class="btn-lang" aria-label="Switch language">FA / EN</button>
       </div>
-      <div class="stat-item">
-        <div class="stat-num-wrap">
-          <strong class="counter" data-target="98">0</strong
-          ><span class="suf">%</span>
-        </div>
-        <p data-i18n="stat_2">Client Satisfaction</p>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num-wrap">
-          <strong class="counter" data-target="6">0</strong
-          ><span class="suf">+</span>
-        </div>
-        <p data-i18n="stat_3">Years Experience</p>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num-wrap">
-          <strong class="counter" data-target="50">0</strong
-          ><span class="suf">+</span>
-        </div>
-        <p data-i18n="stat_4">Happy Clients</p>
-      </div>
+
+      <a href="#contact" class="btn-header" data-i18n="nav_quote">Get a Quote</a>
+
+      <button class="burger" id="burger" type="button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <section id="services" class="services">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-tag" data-i18n="serv_tag">What I Do</span>
-          <h2 id="servTitle">Premium <span class="grad-txt">Services</span></h2>
-          <p data-i18n="serv_desc">
-            End-to-end WordPress solutions crafted with precision and purpose
-          </p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card glass-card">
-            <div class="service-icon-wrap ic1">
-              <i class="fa-brands fa-wordpress"></i>
-            </div>
-            <h3 data-i18n="s1_title">WordPress Design</h3>
-            <p data-i18n="s1_desc">
-              Bespoke WordPress websites tailored to your brand with
-              pixel-perfect design and seamless navigation.
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+      <a href="#home" class="mob-link" data-i18n="nav_home">Home</a>
+      <a href="#services" class="mob-link" data-i18n="nav_services">Services</a>
+      <a href="#about" class="mob-link" data-i18n="nav_about">About</a>
+      <a href="#portfolio" class="mob-link" data-i18n="nav_portfolio">Portfolio</a>
+      <a href="#contact" class="mob-link" data-i18n="nav_contact">Contact</a>
+      <a href="#contact" class="mob-cta" data-i18n="nav_quote">Get a Quote</a>
+      <div class="menu-lang-mobile">
+        <button id="langBtnMob" class="btn-lang btn-lang-mob" aria-label="Switch language">🌐 FA / EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Hero — WordPress Developer">
+      <div class="hero-slider" id="heroSlider">
+        <div class="container slide active">
+          <div class="slide-content">
+            <span class="slide-tag" data-i18n="hero_tag">WordPress & WooCommerce Expert</span>
+            <h1 id="heroTitle">
+              WordPress Sites That <span class="grad-txt">Work for You</span><br />Not Just Look Good
+            </h1>
+            <p data-i18n="hero_desc">
+              Your website should be your best salesperson — available 24/7, converting visitors into customers. I build fast, strategic WordPress sites that look great and actually grow your business.
             </p>
-            <ul class="service-list">
-              <li data-i18n="s1_l1">Custom Theme Development</li>
-              <li data-i18n="s1_l2">Responsive Mobile Design</li>
-              <li data-i18n="s1_l3">Page Speed Optimization</li>
-            </ul>
-          </div>
-          <div class="service-card glass-card featured">
-            <div class="featured-badge" data-i18n="featured_badge">
-              Most Popular
+            <div class="hero-btns">
+              <a href="#services" class="btn-grad" data-i18n="hero_btn">See What I Do</a>
             </div>
-            <div class="service-icon-wrap ic2">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-            <h3 data-i18n="s2_title">WooCommerce Stores</h3>
-            <p data-i18n="s2_desc">
-              Fully functional online stores with optimized checkout flows,
-              payment integrations, and inventory management.
-            </p>
-            <ul class="service-list">
-              <li data-i18n="s2_l1">Complete Store Setup</li>
-              <li data-i18n="s2_l2">Payment Gateway Integration</li>
-              <li data-i18n="s2_l3">Product Catalog Design</li>
-            </ul>
-          </div>
-          <div class="service-card glass-card">
-            <div class="service-icon-wrap ic3">
-              <i class="fa-solid fa-bolt"></i>
-            </div>
-            <h3 data-i18n="s3_title">Landing Pages</h3>
-            <p data-i18n="s3_desc">
-              High-converting landing pages designed to capture leads, drive
-              sales, and make campaigns succeed.
-            </p>
-            <ul class="service-list">
-              <li data-i18n="s3_l1">Conversion-Focused Design</li>
-              <li data-i18n="s3_l2">A/B Testing Ready</li>
-              <li data-i18n="s3_l3">Fast Load Performance</li>
-            </ul>
-          </div>
-          <div class="service-card glass-card">
-            <div class="service-icon-wrap ic4">
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
-            </div>
-            <h3 data-i18n="s4_title">SEO &amp; Optimization</h3>
-            <p data-i18n="s4_desc">
-              Technical SEO and performance optimization to rank higher on
-              Google and deliver lightning-fast experiences.
-            </p>
-            <ul class="service-list">
-              <li data-i18n="s4_l1">On-Page SEO Setup</li>
-              <li data-i18n="s4_l2">Core Web Vitals</li>
-              <li data-i18n="s4_l3">Speed Optimization</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="about">
+    <!-- STATS -->
+    <div class="stats-band" role="region" aria-label="Key statistics">
+      <div class="stat-item">
+        <div class="stat-num-wrap">
+          <strong class="counter" data-target="52">0</strong><span class="suf">+</span>
+        </div>
+        <p data-i18n="stat_1">Projects Delivered</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-wrap">
+          <strong class="counter" data-target="98">0</strong><span class="suf">%</span>
+        </div>
+        <p data-i18n="stat_2">Client Satisfaction</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-wrap">
+          <strong class="counter" data-target="6">0</strong><span class="suf">+</span>
+        </div>
+        <p data-i18n="stat_3">Years of Experience</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-wrap">
+          <strong class="counter" data-target="50">0</strong><span class="suf">+</span>
+        </div>
+        <p data-i18n="stat_4">Happy Clients</p>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="services" aria-labelledby="servTitle">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag" data-i18n="serv_tag">Services</span>
+          <h2 id="servTitle">Expert <span class="grad-txt">Services</span></h2>
+          <p data-i18n="serv_desc">Every project is treated as a long-term investment, not just a deliverable.</p>
+        </div>
+        <div class="services-grid" role="list">
+
+          <article class="service-card glass-card" role="listitem">
+            <div class="service-icon-wrap ic1" aria-hidden="true">
+              <i class="fa-brands fa-wordpress"></i>
+            </div>
+            <h3 data-i18n="s1_title">WordPress Website Design</h3>
+            <p data-i18n="s1_desc">A website built around your goals, not a template. I craft custom WordPress sites that reflect your brand identity and guide visitors toward taking action.</p>
+            <ul class="service-list" aria-label="WordPress Design features">
+              <li data-i18n="s1_l1">Custom Theme Development</li>
+              <li data-i18n="s1_l2">Mobile-First Responsive Design</li>
+              <li data-i18n="s1_l3">Core Web Vitals Optimization</li>
+            </ul>
+          </article>
+
+          <article class="service-card glass-card featured" role="listitem">
+            <div class="featured-badge" data-i18n="featured_badge">Most Popular</div>
+            <div class="service-icon-wrap ic2" aria-hidden="true">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <h3 data-i18n="s2_title">WooCommerce Online Stores</h3>
+            <p data-i18n="s2_desc">An online store that actually sells. I build WooCommerce shops with seamless checkout flows, secure payment gateways, and product pages designed to convert.</p>
+            <ul class="service-list" aria-label="WooCommerce features">
+              <li data-i18n="s2_l1">Full Store Setup & Configuration</li>
+              <li data-i18n="s2_l2">Payment Gateway Integration</li>
+              <li data-i18n="s2_l3">Conversion-Optimized Product Pages</li>
+            </ul>
+          </article>
+
+          <article class="service-card glass-card" role="listitem">
+            <div class="service-icon-wrap ic3" aria-hidden="true">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3 data-i18n="s3_title">Landing Pages</h3>
+            <p data-i18n="s3_desc">One goal. One page. Maximum results. I design focused landing pages for campaigns and product launches that capture leads and turn clicks into revenue.</p>
+            <ul class="service-list" aria-label="Landing Page features">
+              <li data-i18n="s3_l1">Conversion-Focused Layout</li>
+              <li data-i18n="s3_l2">A/B Testing Ready Structure</li>
+              <li data-i18n="s3_l3">Sub-2s Load Speed</li>
+            </ul>
+          </article>
+
+          <article class="service-card glass-card" role="listitem">
+            <div class="service-icon-wrap ic4" aria-hidden="true">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h3 data-i18n="s4_title">SEO &amp; Performance</h3>
+            <p data-i18n="s4_desc">Being found on Google is not luck — it's strategy. I handle the technical SEO and speed optimization that moves your site up the rankings and keeps it there.</p>
+            <ul class="service-list" aria-label="SEO features">
+              <li data-i18n="s4_l1">Technical &amp; On-Page SEO</li>
+              <li data-i18n="s4_l2">Core Web Vitals (LCP, CLS, INP)</li>
+              <li data-i18n="s4_l3">Page Speed &amp; Caching Setup</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about" aria-labelledby="aboutTitle">
       <div class="container about-inner">
-        <div class="about-img-col">
+        <div class="about-img-col" aria-hidden="true">
           <div class="about-img-wrap">
             <div class="grad-border-about">
-              <img src="images/profile.jpg" alt="About Me" />
+              <img src="images/profile.jpg" alt="Hooman Keshavarzi — WordPress Developer" width="400" height="400" />
             </div>
             <div class="about-badge">
-              <strong>5+</strong
-              ><span data-i18n="about_exp">Years<br />Experience</span>
+              <strong>6+</strong>
+              <span data-i18n="about_exp">Years<br />Experience</span>
             </div>
           </div>
         </div>
         <div class="about-content">
           <span class="section-tag" data-i18n="nav_about">About Me</span>
           <h2 id="aboutTitle">
-            The Designer Behind<br /><span class="grad-txt"
-              >Your Digital Growth</span
-            >
+            A Developer Who Cares About<br /><span class="grad-txt">Your Real Results</span>
           </h2>
           <p class="about-lead" data-i18n="about_lead">
-            With over 5 years of hands-on experience, I help B2B brands and
-            e-commerce stores scale their operations through custom, high-speed
-            WordPress development.
+            I'm Hooman — a WordPress developer and web strategist with 6+ years of hands-on experience. I work with businesses of all sizes, from local startups to international brands, helping them build websites that don't just look good but actually generate results. My advantage? Solid technical skill, competitive pricing, and a personal, responsive approach you won't get from a big agency.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="testimonials">
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" aria-labelledby="testiTitle">
       <div class="container">
         <div class="section-head">
-          <span class="section-tag" data-i18n="testi_tag">Client Words</span>
-          <h2 id="testiTitle">
-            What Clients <span class="grad-txt">Say</span>
-          </h2>
+          <span class="section-tag" data-i18n="testi_tag">Client Reviews</span>
+          <h2 id="testiTitle">What Clients <span class="grad-txt">Say</span></h2>
         </div>
-        <div class="testi-slider">
+        <div class="testi-slider" role="region" aria-label="Client testimonials">
           <div class="testi-track" id="testiTrack">
-            <div class="testi-card">
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p data-i18n="t1_quote">
-                "Exceptional work! The WordPress site delivered was beyond
-                expectations. Fast, elegant, and perfectly aligned with our
-                brand."
-              </p>
+
+            <article class="testi-card">
+              <div class="testi-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p data-i18n="t1_quote">"Working with BusinessWeb Studio was one of the best decisions for our business. The site launched on time, loads incredibly fast, and our team loves managing it."</p>
               <div class="testi-author">
-                <div class="testi-avatar av1">S</div>
+                <div class="testi-avatar av1" aria-hidden="true">S</div>
                 <div>
-                  <strong>Sarah Mitchell</strong
-                  ><span data-i18n="t1_role">CEO, Bloom Agency</span>
+                  <strong>Sarah Mitchell</strong>
+                  <span data-i18n="t1_role">CEO, Bloom Agency</span>
                 </div>
               </div>
-            </div>
-            <div class="testi-card">
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p data-i18n="t2_quote">
-                "Our WooCommerce store saw a 40% increase in conversions after
-                the redesign. Professional, responsive, and truly talented."
-              </p>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p data-i18n="t2_quote">"Our WooCommerce store saw a 40% jump in conversions within the first month after the redesign. The checkout flow is smooth and customers keep complimenting the design."</p>
               <div class="testi-author">
-                <div class="testi-avatar av2">M</div>
+                <div class="testi-avatar av2" aria-hidden="true">M</div>
                 <div>
-                  <strong>Mark Reynolds</strong
-                  ><span data-i18n="t2_role">Owner, TechGear Shop</span>
+                  <strong>Mark Reynolds</strong>
+                  <span data-i18n="t2_role">Owner, TechGear Shop</span>
                 </div>
               </div>
-            </div>
-            <div class="testi-card">
-              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p data-i18n="t3_quote">
-                "The landing page built for our campaign was stunning. Our lead
-                generation improved dramatically. Highly recommended!"
-              </p>
+            </article>
+
+            <article class="testi-card">
+              <div class="testi-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p data-i18n="t3_quote">"The landing page for our product launch exceeded every expectation. Lead cost dropped, conversion rate climbed, and the design made our brand look elite."</p>
               <div class="testi-author">
-                <div class="testi-avatar av3">A</div>
+                <div class="testi-avatar av3" aria-hidden="true">A</div>
                 <div>
-                  <strong>Aisha Karimi</strong
-                  ><span data-i18n="t3_role">Marketing Director</span>
+                  <strong>Aisha Karimi</strong>
+                  <span data-i18n="t3_role">Marketing Director</span>
                 </div>
               </div>
-            </div>
+            </article>
+
           </div>
         </div>
-        <div class="testi-nav">
-          <button id="tPrev">&#8592;</button><button id="tNext">&#8594;</button>
+        <div class="testi-nav" aria-label="Testimonial navigation">
+          <button id="tPrev" aria-label="Previous testimonial">&#8592;</button>
+          <button id="tNext" aria-label="Next testimonial">&#8594;</button>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- FAQ -->
+    <section id="faq" class="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag" data-i18n="faq_tag">FAQ</span>
+          <h2 id="faqTitle" data-i18n="faq_title">Frequently Asked <span class="grad-txt">Questions</span></h2>
+        </div>
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-question" data-i18n="faq_q1">How long does it take to build a WordPress website?</summary>
+            <div class="faq-answer">
+              <p data-i18n="faq_a1">Most WordPress websites are delivered within 7–14 business days depending on complexity. Landing pages can be ready in 3–5 days. I always provide a clear timeline before starting.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question" data-i18n="faq_q2">Do you work with international clients?</summary>
+            <div class="faq-answer">
+              <p data-i18n="faq_a2">Yes — I work with clients worldwide. Most communication happens via WhatsApp or email, and I'm comfortable working across different time zones.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question" data-i18n="faq_q3">What makes BusinessWeb Studio different from larger agencies?</summary>
+            <div class="faq-answer">
+              <p data-i18n="faq_a3">You get competitive pricing, faster delivery, and direct communication with the developer — not account managers. Every project receives personal attention from start to finish.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question" data-i18n="faq_q4">Do you offer support after the website is launched?</summary>
+            <div class="faq-answer">
+              <p data-i18n="faq_a4">Yes. I provide post-launch support and can handle ongoing maintenance, updates, and improvements. Long-term client relationships are something I genuinely value.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question" data-i18n="faq_q5">Can you work on an existing WordPress site?</summary>
+            <div class="faq-answer">
+              <p data-i18n="faq_a5">Absolutely. I can redesign, optimize, fix bugs, or add new features to an existing WordPress or WooCommerce site.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact" aria-labelledby="contactTitle">
       <div class="container contact-inner">
         <div class="contact-info">
           <span class="section-tag" data-i18n="nav_contact">Get In Touch</span>
-          <h2 id="contactTitle">
-            Let's Build<br />Something <span class="grad-txt">Great</span>
-          </h2>
-          <p data-i18n="contact_desc">
-            Ready to elevate your online presence? I'd love to hear about your
-            project. Reach out and let's start creating.
-          </p>
+          <h2 id="contactTitle">Tell Me About Your <span class="grad-txt">Project</span></h2>
+          <p data-i18n="contact_desc">Got a project in mind? Tell me about your goals, your timeline, and your budget — no pressure, no sales pitch.</p>
           <div class="contact-items">
             <div class="contact-item">
-              <div class="ci-icon cii1">
+              <div class="ci-icon cii1" aria-hidden="true">
                 <i class="fa-solid fa-envelope"></i>
               </div>
               <div class="contact-item-text">
-                <strong>Email:</strong
-                ><span
-                  ><a href="mailto:hoomanvarzi@gmail.com"
-                    >hoomanvarzi@gmail.com</a
-                  ></span
-                >
+                <strong>Email:</strong>
+                <span><a href="mailto:hoomanvarzi@gmail.com">hoomanvarzi@gmail.com</a></span>
               </div>
             </div>
             <div class="contact-item">
-              <div class="ci-icon cii2">
+              <div class="ci-icon cii2" aria-hidden="true">
                 <i class="fa-brands fa-whatsapp"></i>
               </div>
               <div class="contact-item-text">
@@ -320,123 +496,78 @@
             </div>
           </div>
         </div>
+
         <div class="contact-form-wrap">
-          <form id="contactForm">
+          <form id="contactForm" novalidate aria-label="Project inquiry form">
             <div class="form-row">
               <div class="form-group">
-                <label data-i18n="f_name">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="John Doe"
-                  required
-                />
+                <label for="inputName" data-i18n="f_name">Your Name</label>
+                <input type="text" id="inputName" name="name" placeholder="John Doe" required autocomplete="name" />
               </div>
               <div class="form-group">
-                <label data-i18n="f_email">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="john@example.com"
-                  required
-                />
+                <label for="inputEmail" data-i18n="f_email">Email Address</label>
+                <input type="email" id="inputEmail" name="email" placeholder="john@example.com" required autocomplete="email" />
               </div>
             </div>
             <div class="form-group">
-              <label data-i18n="f_service">Service Needed</label>
+              <label for="formService" data-i18n="f_service">Which Service Do You Need?</label>
               <select name="service" id="formService"></select>
             </div>
             <div class="form-group">
-              <label data-i18n="f_details">Project Details</label>
-              <textarea name="message" rows="5" required></textarea>
+              <label for="inputMessage" data-i18n="f_details">Tell Me About Your Project</label>
+              <textarea id="inputMessage" name="message" rows="5" required></textarea>
             </div>
-            <button
-              class="btn-submit"
-              type="submit"
-              id="submitBtn"
-              data-i18n="f_send"
-            >
-              Send Message →
-            </button>
-            <div
-              id="formSuccess"
-              style="display: none; color: #6bcb77; margin-top: 1rem"
-              data-i18n="f_success"
-            >
-              ✓ Message sent successfully!
-            </div>
-            <div
-              id="formError"
-              style="display: none; color: #ff6b6b; margin-top: 1rem"
-              data-i18n="f_error"
-            >
-              ⚠ Something went wrong. Try again.
-            </div>
+            <button class="btn-submit" type="submit" id="submitBtn" data-i18n="f_send">Send Message →</button>
+            <div id="formSuccess" style="display:none;color:#6bcb77;margin-top:1rem" data-i18n="f_success" role="alert">✓ Message received! I'll get back to you within 24 hours.</div>
+            <div id="formError" style="display:none;color:#ff6b6b;margin-top:1rem" data-i18n="f_error" role="alert">⚠ Something went wrong. Please try again or reach me on WhatsApp.</div>
           </form>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="footer-top">
-        <div class="container footer-top-inner">
-          <div class="footer-brand">
-            <a href="#home" class="logo logo-footer">BusinessWeb Studio</a>
-            <p data-i18n="foot_brand">
-              Premium WordPress design services crafted with passion, precision,
-              and purpose.
-            </p>
-          </div>
-          <div class="footer-links">
-            <h5 data-i18n="foot_quick">Quick Links</h5>
-            <a href="#home" data-i18n="nav_home">Home</a>
-            <a href="#services" data-i18n="nav_services">Services</a>
-            <a href="#about" data-i18n="nav_about">About</a>
-            <a href="#contact" data-i18n="nav_contact">Contact</a>
-          </div>
-          <div class="footer-contact-col">
-            <h5 data-i18n="nav_contact">Contact</h5>
-            <p>
-              &#9993;
-              <a href="mailto:hoomanvarzi@gmail.com">hoomanvarzi@gmail.com</a>
-            </p>
-             <p><span class="footer-icon">&#128172;</span> <bdi class="phone-number">(+374) 93-996471</bdi></p>            
-            <a
-              href="https://wa.me/37493996471"
-              class="footer-wa"
-              target="_blank"
-              data-i18n="foot_wa"
-              >WhatsApp Me</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
-          <p data-i18n="foot_copy">
-            © 2025 BusinessWebStudio. All rights reserved.
-          </p>
-          <p data-i18n="foot_heart">
-            Built with Hooman Keshavarzi
-          </p>
-        </div>
-      </div>
-    </footer>
+  </main>
 
-    <a
-      href="https://wa.me/37493996471"
-      class="wa-float"
-      target="_blank"
-      rel="noopener"
-      aria-label="WhatsApp"
-    >
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-        />
-      </svg>
-    </a>
-    
-    <script src="js/main.js"></script>
-  </body>
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+        <div class="footer-brand">
+          <a href="#home" class="logo logo-footer" aria-label="BusinessWeb Studio">BusinessWeb Studio</a>
+          <p data-i18n="foot_brand">Custom WordPress design and WooCommerce development for businesses that take their online presence seriously.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <h5 data-i18n="foot_quick">Quick Links</h5>
+          <a href="#home" data-i18n="nav_home">Home</a>
+          <a href="#services" data-i18n="nav_services">Services</a>
+          <a href="#about" data-i18n="nav_about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </nav>
+        <div class="footer-contact-col">
+          <h5 data-i18n="nav_contact">Contact</h5>
+          <p>&#9993; <a href="mailto:hoomanvarzi@gmail.com">hoomanvarzi@gmail.com</a></p>
+          <p><span class="footer-icon" aria-hidden="true">&#128172;</span> <bdi class="phone-number">(+374) 93-996471</bdi></p>
+          <a href="https://wa.me/37493996471" class="footer-wa" target="_blank" rel="noopener noreferrer" data-i18n="foot_wa">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p data-i18n="foot_copy">© 2025 BusinessWeb Studio. All rights reserved.</p>
+        <p data-i18n="foot_heart">Built with <span class="heart" aria-hidden="true">♥</span> and a lot of attention to detail</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/37493996471" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
