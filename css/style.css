@@ -1398,14 +1398,11 @@ html[dir="rtl"] .mobile-menu.open {
 
 /* ── بخش FAQ ── */
 .faq {
-  padding: 8rem 0;
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: 5rem 0;
 }
 
 .faq-list {
-  max-width: 780px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1415,19 +1412,19 @@ html[dir="rtl"] .mobile-menu.open {
 .faq-item {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  transition: border-color var(--tr);
+  transition: border-color var(--transition);
 }
 
 .faq-item[open] {
-  border-color: rgba(199, 125, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .faq-question {
   list-style: none;
-  padding: 1.4rem 1.8rem;
-  font-size: 1rem;
+  padding: 1.25rem 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -1436,41 +1433,55 @@ html[dir="rtl"] .mobile-menu.open {
   gap: 1rem;
   color: var(--white);
   user-select: none;
+  text-align: inherit;
 }
 
-.faq-question::-webkit-details-marker { display: none; }
+.faq-question::-webkit-details-marker {
+  display: none;
+}
 
 .faq-question::after {
-  content: "+";
+  content: '+';
   font-size: 1.4rem;
-  font-weight: 300;
-  color: var(--c5);
-  transition: transform var(--tr);
+  font-weight: 400;
+  color: #a1a1aa;
+  transition: transform var(--transition);
   flex-shrink: 0;
 }
 
 .faq-item[open] .faq-question::after {
-  transform: rotate(45deg);
+  content: '×';
 }
 
 .faq-answer {
-  padding: 0 1.8rem 1.4rem;
+  padding: 0 1.5rem 1.25rem;
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.7;
+  text-align: inherit;
 }
 
-/* RTL FAQ */
-html[dir="rtl"] .faq-question {
-  flex-direction: row-reverse;
-}
-html[dir="rtl"] .faq-question::after {
-  margin-left: 0;
-  margin-right: auto;
+/* --- RTL / LTR Fixes --- */
+html[dir="rtl"] .faq-question,
+html[dir="rtl"] .faq-answer {
+  text-align: right;
 }
 
+html[dir="ltr"] .faq-question,
+html[dir="ltr"] .faq-answer {
+  text-align: left;
+}
+
+/* --- Mobile Responsive --- */
 @media (max-width: 768px) {
-  .faq { padding: 5rem 0; }
-  .faq-question { padding: 1.2rem 1.4rem; font-size: 0.92rem; }
-  .faq-answer { padding: 0 1.4rem 1.2rem; }
+  .faq {
+    padding: 3rem 0;
+  }
+  .faq-question {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+  .faq-answer {
+    padding: 0 1.25rem 1rem;
+  }
 }
