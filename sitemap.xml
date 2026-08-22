@@ -1,1 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- صفحه اصلی -->
+  <url>
+    <loc>https://businesswebstudio.pro/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://businesswebstudio.pro/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://businesswebstudio.pro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://businesswebstudio.pro/"/>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحه بلاگ -->
+  <url>
+    <loc>https://businesswebstudio.pro/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://businesswebstudio.pro/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://businesswebstudio.pro/blog.html"/>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- پست‌های بلاگ -->
+  <url>
+    <loc>https://businesswebstudio.pro/posts/ai-wordpress-integration.html</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://businesswebstudio.pro/posts/claude-wordpress-development.html</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://businesswebstudio.pro/posts/woocommerce-conversion-tips.html</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://businesswebstudio.pro/posts/wordpress-speed-optimization.html</loc>
+    <lastmod>2025-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://businesswebstudio.pro/posts/landing-page-mistakes.html</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://businesswebstudio.pro/posts/technical-seo-wordpress.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://businesswebstudio.pro/posts/elementor-vs-custom.html</loc>
+    <lastmod>2025-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://businesswebstudio.pro/posts/ai-content-wordpress.html</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
