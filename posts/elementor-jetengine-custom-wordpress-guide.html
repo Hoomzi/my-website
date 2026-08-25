@@ -1,96 +1,938 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive Guide to Custom Website Design with Elementor Pro and JetEngine</title>
-    <meta name="description" content="Learn how to build dynamic and modern websites using Elementor Pro and JetEngine. The powerful combination of AI tools and WordPress for high performance.">
-    <!-- Link to the main stylesheet -->
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Website Design with Elementor Pro & JetEngine | BusinessWeb Studio</title>
+  <meta name="description" content="Learn how to build dynamic WordPress websites using Elementor Pro and JetEngine — custom post types, dynamic listings, and AI-assisted development." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Custom Website Design with Elementor Pro & JetEngine" />
+  <meta property="og:description" content="Build dynamic WordPress websites with custom post types, advanced filters, and AI tools." />
+  <meta property="og:image" content="https://businesswebstudio.pro/images/blog/Building Dynamic WordPress Websites with Elementor Pro & JetEngine.jpg" />
+  <meta property="og:url" content="https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" />
+  <meta property="article:published_time" content="2026-08-01" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comprehensive Guide to Custom Website Design with Elementor Pro and JetEngine",
+    "author": { "@type": "Person", "name": "Hooman Keshavarzi", "url": "https://businesswebstudio.pro/" },
+    "publisher": { "@type": "Organization", "name": "BusinessWeb Studio", "url": "https://businesswebstudio.pro/", "logo": "https://businesswebstudio.pro/images/logo.png" },
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "inLanguage": "en",
+    "url": "https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;700;900&display=swap" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+
+  <style>
+    /* ══════════════════════════════════
+       POST PAGE — STYLES
+    ══════════════════════════════════ */
+    .post-page { padding-top: 85px; }
+
+    /* ── Hero تصویر بنر ── */
+    .post-hero {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+    }
+    .post-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .post-hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(13,13,20,0.3) 0%,
+        rgba(13,13,20,0.5) 50%,
+        rgba(13,13,20,0.95) 100%);
+    }
+    .post-hero-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2;
+      padding: 2.5rem 0 3rem;
+    }
+
+    /* ── متا هدر ── */
+    .post-header-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .ph-cat {
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: #94a3b8;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .ph-cat::before {
+      content: ""; width: 7px; height: 7px;
+      border-radius: 50%; background: #94a3b8;
+    }
+    .ph-date { font-size: 0.8rem; color: var(--c6); font-weight: 600; }
+    .ph-read { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── عنوان پست ── */
+    .post-headline {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--white);
+      max-width: 820px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── اطلاعات نویسنده ── */
+    .post-author-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .author-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(199,125,255,0.5);
+    }
+    .author-info strong { font-size: 0.9rem; color: var(--white); display: block; }
+    .author-info span { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── بریدکرامب ── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 1.5rem 0;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--white); }
+    .breadcrumb .sep { color: rgba(255,255,255,0.2); }
+    .breadcrumb .current { color: var(--white); }
+
+    /* ── لی‌اوت اصلی ── */
+    .post-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3.5rem;
+      align-items: start;
+      padding: 2rem 0 6rem;
+    }
+
+    /* ── محتوای مقاله ── */
+    .post-content {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #ccc8d4;
+    }
+    .post-content h2 {
+      font-size: 1.65rem; font-weight: 800;
+      color: var(--white); margin: 3rem 0 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(199,125,255,0.2);
+      line-height: 1.35;
+    }
+    .post-content h3 {
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--white); margin: 2rem 0 0.7rem;
+    }
+    .post-content p { margin-bottom: 1.4rem; }
+    .post-content strong { color: var(--white); font-weight: 700; }
+    .post-content a { color: var(--c5); text-decoration: underline; text-underline-offset: 3px; }
+    .post-content a:hover { color: var(--white); }
+
+    .post-content ul, .post-content ol {
+      margin: 0.8rem 0 1.6rem 1.4rem;
+      display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .post-content li { list-style: disc; color: #ccc8d4; padding-right: 0.3rem; }
+    .post-content ol li { list-style: decimal; }
+
+    /* Blockquote */
+    .post-content blockquote {
+      border-right: 4px solid var(--c5);
+      padding: 1rem 1.5rem;
+      margin: 1.8rem 0;
+      background: rgba(199,125,255,0.06);
+      border-radius: 0 12px 12px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* کد inline */
+    .post-content code {
+      background: rgba(255,255,255,0.08);
+      padding: 0.15em 0.5em;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88em;
+      color: var(--c2);
+    }
+
+    /* باکس هایلایت */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(199,125,255,0.08), rgba(77,150,255,0.06));
+      border: 1px solid rgba(199,125,255,0.25);
+      border-radius: 16px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .highlight-box .hb-label {
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--c5); margin-bottom: 0.6rem; display: block;
+    }
+    .highlight-box p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+
+    /* باکس مرحله */
+    .step-list { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2rem; }
+    .step-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.2rem 1.4rem;
+    }
+    .step-num {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--grad-purple);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.85rem; flex-shrink: 0;
+      color: var(--white);
+    }
+    .step-text strong { display: block; color: var(--white); margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .step-text p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+    /* CTA میانی */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(199,125,255,0.12), rgba(77,150,255,0.08));
+      border: 1px solid rgba(199,125,255,0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3.5rem 0;
+    }
+    .inline-cta h3 { font-size: 1.35rem; font-weight: 800; color: var(--white); margin-bottom: 0.7rem; }
+    .inline-cta p { color: var(--muted); font-size: 0.93rem; margin-bottom: 1.5rem; }
+    .inline-cta a {
+      display: inline-flex; padding: 0.85rem 2rem;
+      border-radius: 50px; background: var(--grad-purple);
+      color: var(--white); font-weight: 700; font-size: 0.93rem;
+      text-decoration: none; transition: all 0.3s ease;
+    }
+    .inline-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(199,125,255,0.35); }
+
+    /* تگ‌ها */
+    .post-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .tag {
+      font-size: 0.78rem; font-weight: 600;
+      padding: 0.3rem 0.9rem; border-radius: 30px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border); color: var(--muted);
+      text-decoration: none; transition: all 0.2s;
+    }
+    .tag:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── سایدبار ── */
+    .post-sidebar { position: sticky; top: 105px; }
+
+    .sidebar-widget {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; padding: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .sidebar-widget h4 {
+      font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--muted); margin-bottom: 1.1rem;
+    }
+
+    /* TOC */
+    .toc-nav { display: flex; flex-direction: column; gap: 0.4rem; }
+    .toc-nav a {
+      font-size: 0.86rem; color: var(--muted);
+      text-decoration: none; padding: 0.35rem 0.6rem;
+      border-radius: 7px; transition: all 0.2s; display: block;
+      border-right: 2px solid transparent;
+    }
+    .toc-nav a:hover, .toc-nav a.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.05);
+      border-right-color: var(--c5);
+    }
+
+    /* Share */
+    .share-btns { display: flex; flex-direction: column; gap: 0.6rem; }
+    .share-btn {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.65rem 1rem; border-radius: 10px;
+      font-size: 0.84rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      border: 1px solid var(--border);
+    }
+    .share-btn:hover { transform: translateX(-3px); }
+    .share-wa { background: rgba(37,211,102,0.1); color: #25d366; border-color: rgba(37,211,102,0.25); }
+    .share-tg { background: rgba(0,136,204,0.1); color: #0088cc; border-color: rgba(0,136,204,0.25); }
+    .share-li { background: rgba(10,102,194,0.1); color: #0a66c2; border-color: rgba(10,102,194,0.25); }
+    .share-cp { background: rgba(255,255,255,0.05); color: var(--muted); }
+
+    /* Sidebar CTA */
+    .sidebar-cta {
+      background: linear-gradient(135deg, rgba(199,125,255,0.15), rgba(77,150,255,0.1));
+      border: 1px solid rgba(199,125,255,0.3);
+      border-radius: 18px; padding: 1.8rem 1.5rem; text-align: center;
+    }
+    .sidebar-cta h4 { font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 0.6rem; }
+    .sidebar-cta p { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.6; }
+    .sidebar-cta a {
+      display: block; padding: 0.8rem 1rem;
+      border-radius: 50px; background: var(--grad-purple);
+      color: var(--white); font-weight: 700; font-size: 0.87rem;
+      text-decoration: none; transition: all 0.3s;
+    }
+    .sidebar-cta a:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(199,125,255,0.3); }
+
+    /* ══════════════════════════════════
+       RELATED POSTS — بخش پیشنهادی
+    ══════════════════════════════════ */
+    .related-section {
+      padding: 5rem 0 7rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+    }
+    .related-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; margin-bottom: 2.5rem;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .related-header h2 {
+      font-size: 1.8rem; font-weight: 800;
+    }
+    .related-header a {
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--c5); text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .related-header a:hover { color: var(--white); }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+    }
+
+    .related-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      transition: all 0.35s cubic-bezier(0.25,1,0.5,1);
+      display: flex; flex-direction: column;
+    }
+    .related-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .rc-img {
+      position: relative; height: 180px; overflow: hidden;
+      background: var(--bg3);
+    }
+    .rc-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .related-card:hover .rc-img img { transform: scale(1.06); }
+
+    /* رنگ متمایز هر کارت */
+    .related-card:nth-child(1) .rc-img::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(199,125,255,0.15), transparent);
+      z-index: 1;
+    }
+    .related-card:nth-child(2) .rc-img::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,107,107,0.15), transparent);
+      z-index: 1;
+    }
+    .related-card:nth-child(3) .rc-img::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(77,150,255,0.15), transparent);
+      z-index: 1;
+    }
+
+    .rc-arrow {
+      position: absolute; top: 12px; right: 12px; z-index: 2;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(13,13,20,0.7); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; color: var(--white);
+      opacity: 0; transform: scale(0.8);
+      transition: all 0.3s ease;
+    }
+    .related-card:hover .rc-arrow { opacity: 1; transform: scale(1); }
+
+    .rc-cat-badge {
+      position: absolute; bottom: 12px; right: 12px; z-index: 2;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 0.2rem 0.6rem; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .badge-ai { background: rgba(255,217,61,0.2); color: var(--c2); }
+    .badge-wordpress { background: rgba(148,163,184,0.2); color: #94a3b8; }
+    .badge-woo { background: rgba(199,125,255,0.2); color: var(--c5); }
+    .badge-seo { background: rgba(107,203,119,0.2); color: var(--c3); }
+    .badge-landing { background: rgba(77,150,255,0.2); color: var(--c4); }
+
+    .rc-body { padding: 1.3rem 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .rc-date { font-size: 0.72rem; color: var(--c6); font-weight: 600; margin-bottom: 0.5rem; display: block; }
+    .rc-title {
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--white); line-height: 1.5;
+      flex: 1; margin-bottom: 0.8rem;
+    }
+    .rc-excerpt { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+    /* Progress bar خواندن */
+    .read-progress {
+      position: fixed; top: 85px; left: 0; right: 0;
+      height: 3px; background: transparent; z-index: 999;
+    }
+    .read-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--c1), var(--c5), var(--c4));
+      width: 0%; transition: width 0.1s linear;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .post-layout { grid-template-columns: 1fr; }
+      .post-sidebar { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .post-hero { height: 380px; }
+      .post-headline { font-size: 1.8rem; }
+      .post-content h2 { font-size: 1.4rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      .post-sidebar { grid-template-columns: 1fr; }
+      .related-section { padding: 3.5rem 0 5rem; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <article class="blog-post-container">
-        
-        <!-- Article Header -->
-        <header>
-            <h1>
-                Comprehensive Guide to Custom Website Design with Elementor Pro and JetEngine
-            </h1>
-            <div class="post-meta">
-                <span>Published: August 2026</span> | <span>Author: Business Web Studio</span>
+  <!-- نوار پیشرفت خواندن -->
+  <div class="read-progress" aria-hidden="true">
+    <div class="read-progress-bar" id="readBar"></div>
+  </div>
+
+  <!-- ══ HEADER ══ -->
+  <header id="header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="BusinessWeb Studio">
+        <img src="../images/logo.png" alt="BusinessWeb Studio Logo" class="logo-img" width="36" height="36" />
+        BusinessWeb Studio
+      </a>
+      <nav id="nav" aria-label="Main navigation">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#about">About</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="lang-switch-wrap">
+        <button id="langBtn" class="btn-lang" aria-label="Switch language">FA / EN</button>
+      </div>
+      <a href="../index.html#contact" class="btn-header">Start a Project</a>
+      <button class="burger" id="burger" type="button" aria-label="Toggle mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html#home" class="mob-link">Home</a>
+      <a href="../index.html#services" class="mob-link">Services</a>
+      <a href="../index.html#about" class="mob-link">About</a>
+      <a href="../blog.html" class="mob-link">Blog</a>
+      <a href="../index.html#contact" class="mob-link">Contact</a>
+      <a href="../index.html#contact" class="mob-cta">Start a Project</a>
+      <div class="menu-lang-mobile">
+        <button id="langBtnMob" class="btn-lang btn-lang-mob">🌐 FA / EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="post-page">
+
+    <!-- ══ HERO ══ -->
+    <section class="post-hero" aria-label="Post cover image">
+      <img
+        src="../images/blog/Building Dynamic WordPress Websites with Elementor Pro & JetEngine.jpg"
+        alt="Building Dynamic WordPress Websites with Elementor Pro and JetEngine"
+      />
+      <div class="post-hero-content">
+        <div class="container">
+          <div class="post-header-meta">
+            <span class="ph-cat">WordPress</span>
+            <span class="ph-date">August 2026</span>
+            <span class="ph-read">⏱ 6 min read</span>
+          </div>
+          <h1 class="post-headline">
+            Comprehensive Guide to Custom Website Design<br />with Elementor Pro and JetEngine
+          </h1>
+          <div class="post-author-bar">
+            <img src="../images/profile.jpg" alt="Hooman Keshavarzi" class="author-avatar" />
+            <div class="author-info">
+              <strong>Hooman Keshavarzi</strong>
+              <span>WordPress Developer · BusinessWeb Studio</span>
             </div>
-            <img src="../images/blog/Building Dynamic WordPress Websites with Elementor Pro & JetEngine.jpg" alt="Custom Website Design with Elementor Pro and JetEngine">
-        </header>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Introduction -->
-        <section class="intro">
-            <p>
-                In today's digital landscape, using pre-built and limited templates is no longer enough to meet the demands of growing businesses. 
-                <strong>Custom website design with Elementor</strong> paired with the powerful <strong>JetEngine plugin</strong> makes it possible to build complex, dynamic, and fully tailored platforms without heavy manual coding.
-            </p>
-            <p>
-                If you want to understand how an <strong>Elementor Pro website designer</strong> can manage dynamic data structures and leverage modern AI tools to multiply your website's performance, this guide is for you.
-            </p>
-        </section>
+    <!-- ══ BODY ══ -->
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="../blog.html">Blog</a>
+        <span class="sep">›</span>
+        <span class="current">Elementor Pro & JetEngine Guide</span>
+      </nav>
 
-        <!-- Section 1 -->
-        <section>
-            <h2>
-                Why the Combination of Elementor Pro and JetEngine is the First Choice for Professionals
-            </h2>
-            <p>
-                Elementor Pro provides exceptional tools for UI/UX design. However, when it comes to managing advanced data structures, multi-level filtering, and **JetEngine Custom Post Types**, it requires an unmatched complementary tool: JetEngine from Crocoblock.
-            </p>
-            <ul>
-                <li><strong>Custom Post Types (CPT):</strong> Build tailored post types such as Portfolios, Real Estate listings, Projects, and Services.</li>
-                <li><strong>Advanced Custom Fields:</strong> Add specific metadata fields to any article, service, or product.</li>
-                <li><strong>Listing Grids:</strong> Display dynamic data in completely customized layouts based on user needs.</li>
-            </ul>
-        </section>
+      <div class="post-layout">
 
-        <!-- Section 2 -->
-        <section>
-            <h2>
-                The Role of Artificial Intelligence in Building Next-Generation Websites
-            </h2>
-            <p>
-                Today, leveraging AI tools like Claude and ChatGPT has become a core pillar for accelerating web development. **AI-driven website design** enables developers to:
-            </p>
-            <ol>
-                <li>Write custom CSS and JavaScript snippets in minimal time.</li>
-                <li>Develop SEO strategies and content workflows tailored to target audience personas.</li>
-                <li>Optimize database structures and post-type relationships in JetEngine.</li>
-            </ol>
-        </section>
+        <!-- محتوا -->
+        <article class="post-content" id="postContent" itemscope itemtype="https://schema.org/Article">
 
-        <!-- Section 3 -->
-        <section>
-            <h3>
-                How to Optimize Speed and SEO for Elementor Websites?
-            </h3>
-            <p>
-                One of the primary concerns in **custom website development with Elementor** is page load speed. By following a few key practices, you can maintain peak performance and search engine rankings:
-            </p>
-            <blockquote>
-                By keeping HTML code clean, utilizing next-gen image formats (like WebP), and properly configuring <code>sitemap.xml</code> and <code>robots.txt</code>, search engines will reward your website with higher rankings.
-            </blockquote>
-        </section>
+          <p>
+            In today's digital landscape, using pre-built and limited templates is no longer enough to meet the demands of growing businesses. <strong>Custom website design with Elementor Pro</strong> paired with the powerful <strong>JetEngine plugin</strong> makes it possible to build complex, dynamic, and fully tailored platforms without heavy manual coding.
+          </p>
+          <p>
+            If you want to understand how an Elementor Pro website designer can manage dynamic data structures and leverage modern AI tools to multiply your website's performance, this guide is for you.
+          </p>
 
-        <!-- Conclusion -->
-        <footer>
-            <h2>Summary & Solution</h2>
-            <p>
-                Combining Elementor Pro's flexibility, JetEngine's data management capabilities, and AI-assisted development velocity is the winning formula for modern web applications. If you aim for a scalable, fast, and fully SEO-optimized project, this strategy is your best approach.
-            </p>
-            <p>
-                <a href="../blog.html">
-                    Back to Blog List
-                </a>
-            </p>
-        </footer>
+          <h2 id="why-combo">Why Elementor Pro + JetEngine is the #1 Choice for Professionals</h2>
 
-    </article>
+          <p>
+            Elementor Pro provides exceptional tools for UI/UX design. However, when it comes to managing advanced data structures, multi-level filtering, and custom post types, it requires a complementary powerhouse: <strong>JetEngine from Crocoblock</strong>.
+          </p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div class="step-text">
+                <strong>Custom Post Types (CPT)</strong>
+                <p>Build tailored post types such as Portfolios, Real Estate listings, Projects, and Services — each with their own fields, taxonomies, and archive pages.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div class="step-text">
+                <strong>Advanced Custom Fields</strong>
+                <p>Add specific metadata fields to any article, service, or product. Text, images, galleries, repeaters, relations — all accessible dynamically in Elementor.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div class="step-text">
+                <strong>Listing Grids & Smart Filters</strong>
+                <p>Display dynamic data in completely customized layouts. Users can filter results by any custom field — price, location, category — with instant Ajax updates.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <span class="hb-label">💡 Expert Insight</span>
+            <p>The real power of this combination shows when you need to build something like a property listing platform, a job board, or a multi-vendor directory. What would take weeks of custom development can be accomplished in days with Elementor Pro + JetEngine — especially when AI tools assist with the configuration logic.</p>
+          </div>
+
+          <h2 id="ai-role">The Role of AI in Building Next-Generation WordPress Sites</h2>
+
+          <p>
+            Today, leveraging AI tools like <strong>Claude</strong> and ChatGPT has become a core pillar for accelerating web development. AI-driven website design enables developers to work faster and smarter:
+          </p>
+
+          <ul>
+            <li>Write custom CSS and JavaScript snippets in minimal time — Claude generates clean, commented code on demand</li>
+            <li>Develop SEO strategies and content workflows tailored to specific audience personas</li>
+            <li>Optimize database structures and custom field relationships in JetEngine</li>
+            <li>Generate dynamic template logic and conditional visibility rules</li>
+            <li>Debug Elementor conflicts and plugin incompatibilities with AI-assisted analysis</li>
+          </ul>
+
+          <div class="inline-cta">
+            <h3>Need a Custom WordPress Website?</h3>
+            <p>At <strong>BusinessWeb Studio</strong>, we combine Elementor Pro, JetEngine, and AI-assisted development to deliver dynamic websites faster than traditional agencies — at competitive rates.</p>
+            <a href="../index.html#contact">Get a Free Consultation →</a>
+          </div>
+
+          <h2 id="speed-seo">How to Optimize Speed & SEO for Elementor Websites</h2>
+
+          <p>
+            One of the primary concerns in custom website development with Elementor is page load speed. Elementor can be heavy if not configured correctly — but with the right setup, you can achieve excellent Core Web Vitals scores.
+          </p>
+
+          <h3>Essential Speed Optimizations</h3>
+          <ul>
+            <li>Enable Elementor's <strong>Improved Asset Loading</strong> — loads CSS/JS only on pages that use specific widgets</li>
+            <li>Use <code>WebP</code> images with lazy loading enabled across all image widgets</li>
+            <li>Activate <strong>Elementor's CSS Print Method</strong> set to "External File" for better caching</li>
+            <li>Pair with a caching plugin like WP Rocket or LiteSpeed Cache</li>
+          </ul>
+
+          <h3>JetEngine & SEO</h3>
+          <p>
+            JetEngine's dynamic data doesn't automatically get picked up by SEO plugins. Here's how to fix this:
+          </p>
+
+          <blockquote>
+            By integrating JetEngine's custom fields with Yoast SEO or Rank Math using dynamic variable mapping, you ensure that product prices, property descriptions, and other custom metadata appear correctly in Google's structured data — boosting your chances of rich results.
+          </blockquote>
+
+          <p>
+            Always configure a proper <code>sitemap.xml</code> that includes your custom post type archives, and verify your <code>robots.txt</code> doesn't accidentally block JetEngine listing pages.
+          </p>
+
+          <h2 id="conclusion">Summary — The Winning Formula for Modern Web Projects</h2>
+
+          <p>
+            Combining <strong>Elementor Pro's visual flexibility</strong>, <strong>JetEngine's data management power</strong>, and <strong>AI-assisted development velocity</strong> is the winning formula for modern web applications in 2025 and beyond.
+          </p>
+          <p>
+            If you need a scalable, fast, and fully SEO-optimized project — whether it's a real estate platform, a directory site, an e-commerce store, or a complex business website — this stack delivers results that standalone page builders simply cannot.
+          </p>
+          <p>
+            At <a href="../index.html">BusinessWeb Studio</a>, this is the exact approach we use for our clients. The results speak for themselves.
+          </p>
+
+          <!-- تگ‌ها -->
+          <div class="post-tags">
+            <span class="tag">Elementor Pro</span>
+            <span class="tag">JetEngine</span>
+            <span class="tag">WordPress</span>
+            <span class="tag">Custom Post Types</span>
+            <span class="tag">AI Development</span>
+            <span class="tag">BusinessWeb Studio</span>
+          </div>
+
+        </article>
+
+        <!-- سایدبار -->
+        <aside class="post-sidebar" aria-label="Article sidebar">
+
+          <!-- TOC -->
+          <div class="sidebar-widget">
+            <h4>📋 Table of Contents</h4>
+            <nav class="toc-nav">
+              <a href="#why-combo">Why Elementor + JetEngine?</a>
+              <a href="#ai-role">AI in WordPress Development</a>
+              <a href="#speed-seo">Speed & SEO Optimization</a>
+              <a href="#conclusion">Summary</a>
+            </nav>
+          </div>
+
+          <!-- Share -->
+          <div class="sidebar-widget">
+            <h4>📤 Share This Article</h4>
+            <div class="share-btns">
+              <a href="https://wa.me/?text=https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" target="_blank" rel="noopener" class="share-btn share-wa">
+                <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+              </a>
+              <a href="https://t.me/share/url?url=https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" target="_blank" rel="noopener" class="share-btn share-tg">
+                <i class="fa-brands fa-telegram"></i> Share on Telegram
+              </a>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" target="_blank" rel="noopener" class="share-btn share-li">
+                <i class="fa-brands fa-linkedin"></i> Share on LinkedIn
+              </a>
+              <button class="share-btn share-cp" id="copyBtn" onclick="copyLink()">
+                <i class="fa-regular fa-copy"></i> Copy Link
+              </button>
+            </div>
+          </div>
+
+          <!-- CTA سایدبار -->
+          <div class="sidebar-cta">
+            <h4>Ready to Build Your Dynamic Site?</h4>
+            <p>Get expert WordPress development with Elementor Pro & JetEngine — fast delivery, competitive pricing.</p>
+            <a href="../index.html#contact">Contact BusinessWeb Studio</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+    <!-- ══ RELATED POSTS ══ -->
+    <section class="related-section" aria-labelledby="relatedTitle">
+      <div class="container">
+        <div class="related-header">
+          <div>
+            <span class="section-tag">Keep Reading</span>
+            <h2 id="relatedTitle">You Might Also <span class="grad-txt">Like</span></h2>
+          </div>
+          <a href="../blog.html">View All Posts →</a>
+        </div>
+
+        <div class="related-grid" id="relatedGrid">
+          <!-- پست‌های پیشنهادی — توسط JS به صورت رندم انتخاب می‌شوند -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo logo-footer">BusinessWeb Studio</a>
+          <p>Custom WordPress design and WooCommerce development for businesses that take their online presence seriously.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <h5>Quick Links</h5>
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../index.html#about">About</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <div class="footer-contact-col">
+          <h5>Contact</h5>
+          <p>✉ <a href="mailto:hoomanvarzi@gmail.com">hoomanvarzi@gmail.com</a></p>
+          <p>💬 <bdi class="phone-number">(+374) 93-996471</bdi></p>
+          <a href="https://wa.me/37493996471" class="footer-wa" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 BusinessWeb Studio. All rights reserved.</p>
+        <p>Built with <span class="heart">♥</span> and a lot of attention to detail</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/37493996471" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+  (function() {
+
+    // ── هدر اسکرول ──
+    var header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+      // نوار پیشرفت
+      var el = document.getElementById('postContent');
+      if (el) {
+        var rect = el.getBoundingClientRect();
+        var total = el.offsetHeight - window.innerHeight;
+        var scrolled = Math.max(0, -rect.top);
+        var pct = Math.min(100, (scrolled / total) * 100);
+        document.getElementById('readBar').style.width = pct + '%';
+      }
+    }, { passive: true });
+
+    // ── منوی موبایل ──
+    var burger = document.getElementById('burger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e) {
+      if (!header.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        burger.classList.remove('open');
+      }
+    });
+
+    // ── TOC active highlight ──
+    var headings = document.querySelectorAll('.post-content h2[id], .post-content h3[id]');
+    var tocLinks = document.querySelectorAll('.toc-nav a');
+    window.addEventListener('scroll', function() {
+      var current = '';
+      headings.forEach(function(h) {
+        if (window.scrollY >= h.offsetTop - 140) current = h.id;
+      });
+      tocLinks.forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+
+    // ── Copy link ──
+    window.copyLink = function() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var btn = document.getElementById('copyBtn');
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        setTimeout(function() {
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy Link';
+        }, 2000);
+      });
+    };
+
+    // ══════════════════════════════════════
+    //   پست‌های پیشنهادی — رندم
+    // ══════════════════════════════════════
+    var allPosts = [
+      {
+        url: 'ai-wordpress-integration.html',
+        img: '../images/blog/ai-wordpress.jpg',
+        alt: 'Connecting AI to WordPress',
+        cat: 'AI & Automation', badge: 'badge-ai',
+        date: 'August 2025',
+        title: 'Connecting AI to WordPress: A Practical Guide for Business Owners',
+        excerpt: 'From chatbots to content generation — integrate AI into WordPress without writing a single line of code.'
+      },
+      {
+        url: 'claude-wordpress-development.html',
+        img: '../images/blog/claude-wordpress.jpg',
+        alt: 'Claude AI for WordPress',
+        cat: 'AI & Automation', badge: 'badge-ai',
+        date: 'August 2025',
+        title: 'What Claude AI Can Do for Your WordPress Site — From Design to Development',
+        excerpt: 'Design, content, SEO, code reviews — AI tools like Claude are reshaping WordPress development.'
+      },
+      {
+        url: 'woocommerce-conversion-tips.html',
+        img: '../images/blog/woocommerce-conversion.jpg',
+        alt: 'WooCommerce conversion tips',
+        cat: 'WooCommerce', badge: 'badge-woo',
+        date: 'July 2025',
+        title: '7 WooCommerce Tweaks That Increased Our Client\'s Conversions by 40%',
+        excerpt: 'Real changes, real numbers. Checkout flow, product pages, and trust signals that actually work.'
+      },
+      {
+        url: 'wordpress-speed-optimization.html',
+        img: '../images/blog/speed-optimization.jpg',
+        alt: 'WordPress speed optimization',
+        cat: 'WordPress', badge: 'badge-wordpress',
+        date: 'July 2025',
+        title: 'WordPress Speed in 2025: How to Pass Core Web Vitals Without a Developer',
+        excerpt: 'LCP, CLS, INP explained — and the exact settings to fix them fast.'
+      },
+      {
+        url: 'technical-seo-wordpress.html',
+        img: '../images/blog/technical-seo.jpg',
+        alt: 'Technical SEO for WordPress',
+        cat: 'SEO', badge: 'badge-seo',
+        date: 'June 2025',
+        title: 'The 2025 Technical SEO Checklist Every WordPress Site Owner Needs',
+        excerpt: 'Schema, canonical tags, sitemap, Core Web Vitals — a complete actionable checklist.'
+      },
+      {
+        url: 'landing-page-mistakes.html',
+        img: '../images/blog/landing-page.jpg',
+        alt: 'Landing page mistakes',
+        cat: 'Landing Pages', badge: 'badge-landing',
+        date: 'June 2025',
+        title: '5 Landing Page Mistakes That Are Killing Your Campaign Results',
+        excerpt: 'Most pages lose 70% of visitors in 3 seconds. Here\'s why — and how to fix it.'
+      },
+      {
+        url: 'ai-content-wordpress.html',
+        img: '../images/blog/ai-content.jpg',
+        alt: 'AI content for WordPress',
+        cat: 'AI & Automation', badge: 'badge-ai',
+        date: 'May 2025',
+        title: 'How to Use AI to Create SEO Content for Your WordPress Blog',
+        excerpt: 'Prompts, workflows, and editing tips that make AI-generated content rank well.'
+      }
+    ];
+
+    // فیلتر: پست فعلی را حذف کن و ۳ تا رندم انتخاب کن
+    var currentSlug = 'elementor-jetengine-custom-wordpress-guide.html';
+    var pool = allPosts.filter(function(p) { return p.url !== currentSlug; });
+
+    // shuffle
+    for (var i = pool.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+    }
+    var picks = pool.slice(0, 3);
+
+    // رندر
+    var grid = document.getElementById('relatedGrid');
+    picks.forEach(function(post) {
+      var card = document.createElement('a');
+      card.href = post.url;
+      card.className = 'related-card reveal';
+      card.innerHTML =
+        '<div class="rc-img">' +
+          '<img src="' + post.img + '" alt="' + post.alt + '" loading="lazy" />' +
+          '<div class="rc-arrow">↗</div>' +
+          '<span class="rc-cat-badge ' + post.badge + '">' + post.cat + '</span>' +
+        '</div>' +
+        '<div class="rc-body">' +
+          '<span class="rc-date">' + post.date + '</span>' +
+          '<h3 class="rc-title">' + post.title + '</h3>' +
+          '<p class="rc-excerpt">' + post.excerpt + '</p>' +
+        '</div>';
+      grid.appendChild(card);
+    });
+
+    // Reveal
+    if ('IntersectionObserver' in window) {
+      var ro = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry, i) {
+          if (entry.isIntersecting) {
+            setTimeout(function() { entry.target.classList.add('visible'); }, i * 100);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.07 });
+      document.querySelectorAll('.reveal').forEach(function(el) { ro.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+    }
+
+    // ── تغییر زبان ──
+    var currentLang = localStorage.getItem('site_lang') || 'en';
+    document.querySelectorAll('#langBtn, #langBtnMob').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentLang = currentLang === 'en' ? 'fa' : 'en';
+        if (currentLang === 'fa') {
+          document.documentElement.setAttribute('dir', 'rtl');
+          document.documentElement.setAttribute('lang', 'fa');
+        } else {
+          document.documentElement.removeAttribute('dir');
+          document.documentElement.setAttribute('lang', 'en');
+        }
+        localStorage.setItem('site_lang', currentLang);
+      });
+    });
+
+    // حفظ زبان از صفحه قبلی
+    if (currentLang === 'fa') {
+      document.documentElement.setAttribute('dir', 'rtl');
+      document.documentElement.setAttribute('lang', 'fa');
+    }
+
+  })();
+  </script>
 
 </body>
 </html>
