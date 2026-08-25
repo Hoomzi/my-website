@@ -5,70 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Dynamic WordPress Websites with Elementor Pro & JetEngine</title>
     <meta name="description" content="Learn how to build dynamic WordPress websites using Elementor Pro and Crocoblock JetEngine.">
-    <!-- لینک به CSS اصلی سایت با اضافه کردن علامت ورژن برای شکستن کش مرورگر -->
-    <link rel="stylesheet" href="../css/style.css?v=1.1">
+    
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;700;900&display=swap" />
+    <link rel="stylesheet" href="../css/style.css?v=1.2">
+    <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
 </head>
 <body>
 
-    <!-- هدر اصلی سایت شما که از قبل در صفحه بوده، اینجا قرار می‌گیرد -->
+    <!-- نوار پیشرفت مطالعه -->
+    <div class="read-progress" aria-hidden="true">
+        <div class="read-progress-bar" id="readBar"></div>
+    </div>
 
-    <main class="blog-post-page">
-      <div class="container">
-        <article class="blog-post">
-          
-          <!-- هدر اختصاصی مقاله -->
-          <div class="post-header">
-            <h1>Building Dynamic WordPress Websites with Elementor Pro & JetEngine</h1>
-            <div class="post-meta">
-              <span>Published: July 27, 2026</span> | <span>Author: Business Web Studio</span>
+    <!-- هدر سایت -->
+    <header id="header" role="banner">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo" aria-label="BusinessWeb Studio">
+                <img src="../images/logo.png" alt="BusinessWeb Studio Logo" class="logo-img" width="36" height="36" />
+                BusinessWeb Studio
+            </a>
+            <nav id="nav" aria-label="Main navigation">
+                <a href="../index.html#home">Home</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#about">About</a>
+                <a href="../blog.html" class="active">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </nav>
+            <div class="lang-switch-wrap">
+                <button id="langBtn" class="btn-lang" aria-label="Switch language">FA / EN</button>
             </div>
-            <div class="featured-image-wrap">
-              <img src="../images/blog/Building Dynamic WordPress Websites with Elementor Pro & JetEngine.jpg" alt="Building Dynamic WordPress Websites with Elementor Pro & JetEngine">
+            <a href="../index.html#contact" class="btn-header">Start Project</a>
+            <button class="burger" id="burger" type="button" aria-label="Toggle mobile menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="post-page">
+
+        <!-- بخش هیرو مقاله -->
+        <section class="post-hero" aria-label="Post cover image">
+            <img src="../images/blog/Building Dynamic WordPress Websites with Elementor Pro & JetEngine.jpg" alt="Building Dynamic WordPress Websites with Elementor Pro & JetEngine">
+            <div class="post-hero-content">
+                <div class="container">
+                    <div class="post-header-meta">
+                        <span class="ph-cat">WordPress & Dynamic Web</span>
+                        <span class="ph-date">July 27, 2026</span>
+                        <span class="ph-read">⏱ 5 min read</span>
+                    </div>
+                    <h1 class="post-headline">
+                        Building Dynamic WordPress Websites with Elementor Pro & JetEngine
+                    </h1>
+                    <div class="post-author-bar">
+                        <img src="../images/profile.jpg" alt="Hooman Keshavarzi" class="author-avatar" />
+                        <div class="author-info">
+                            <strong>Hooman Keshavarzi</strong>
+                            <span>WordPress Developer · BusinessWeb Studio</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- بدنه اصلی مقاله -->
-          <div class="blog-post-content">
-            <p>
-                In today's web development landscape, relying solely on pre-made themes is no longer sufficient for growing businesses. 
-                Combining <strong>Elementor Pro</strong> with <strong>JetEngine by Crocoblock</strong> allows developers to build highly dynamic, scalable, and tailored web solutions without bloated code.
-            </p>
-            
-            <h2>Why Elementor Pro + JetEngine is the Ultimate Tech Stack</h2>
-            <p>
-                While Elementor Pro excels at UI/UX design, JetEngine brings advanced data management, multi-level filtering, and structural dynamic content handling to the table.
-            </p>
-            <ul>
-                <li><strong>Custom Post Types (CPT):</strong> Effortlessly structure portfolios, services, real estate, or product catalogs.</li>
-                <li><strong>Advanced Custom Fields:</strong> Add tailored metadata to enrich your dynamic content.</li>
-                <li><strong>Listing Grids:</strong> Display items dynamically with complete design control.</li>
-            </ul>
+        <!-- بدنه اصلی و سایدبار -->
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="sep">›</span>
+                <a href="../blog.html">Blog</a>
+                <span class="sep">›</span>
+                <span class="current">Building Dynamic WordPress Websites</span>
+            </nav>
 
-            <h2>Leveraging AI in Modern Web Workflows</h2>
-            <p>
-                Integrating AI tools into the development process dramatically speeds up execution. AI assists in:
-            </p>
-            <ol>
-                <li>Writing custom CSS and JavaScript snippets for tailored interactions.</li>
-                <li>Structuring SEO-focused content and user intent workflows.</li>
-                <li>Optimizing database queries and dynamic relations inside JetEngine.</li>
-            </ol>
+            <div class="post-layout">
 
-            <blockquote>
-                Clean HTML structures, modern image formats (like WebP), and properly configured sitemaps ensure search engines rank your site effectively.
-            </blockquote>
-          </div>
+                <!-- محتوای مقاله (کلاس اصلی post-content) -->
+                <article class="post-content" id="postContent">
+                    <p>
+                        In today's web development landscape, relying solely on pre-made themes is no longer sufficient for growing businesses. 
+                        Combining <strong>Elementor Pro</strong> with <strong>JetEngine by Crocoblock</strong> allows developers to build highly dynamic, scalable, and tailored web solutions without bloated code.
+                    </p>
+                    
+                    <h2 id="tech-stack">Why Elementor Pro + JetEngine is the Ultimate Tech Stack</h2>
+                    <p>
+                        While Elementor Pro excels at UI/UX design, JetEngine brings advanced data management, multi-level filtering, and structural dynamic content handling to the table.
+                    </p>
+                    
+                    <ul>
+                        <li><strong>Custom Post Types (CPT):</strong> Effortlessly structure portfolios, services, real estate, or product catalogs.</li>
+                        <li><strong>Advanced Custom Fields:</strong> Add tailored metadata to enrich your dynamic content.</li>
+                        <li><strong>Listing Grids:</strong> Display items dynamically with complete design control.</li>
+                    </ul>
 
-          <!-- فوتر مقاله و دکمه بازگشت -->
-          <div class="post-footer">
-            <a href="../blog.html" class="btn-blog-back">← Back to Blog List</a>
-          </div>
+                    <h2 id="ai-workflows">Leveraging AI in Modern Web Workflows</h2>
+                    <p>
+                        Integrating AI tools into the development process dramatically speeds up execution. AI assists in:
+                    </p>
 
-        </article>
-      </div>
+                    <ol>
+                        <li>Writing custom CSS and JavaScript snippets for tailored interactions.</li>
+                        <li>Structuring SEO-focused content and user intent workflows.</li>
+                        <li>Optimizing database queries and dynamic relations inside JetEngine.</li>
+                    </ol>
+
+                    <blockquote>
+                        Clean HTML structures, modern image formats (like WebP), and properly configured sitemaps ensure search engines rank your site effectively.
+                    </blockquote>
+
+                    <!-- CTA داخلی مقاله -->
+                    <div class="inline-cta">
+                        <h3>Need a Custom Dynamic Website?</h3>
+                        <p>Let's build a fast, scalable WordPress architecture tailored to your business needs.</p>
+                        <a href="../index.html#contact">Get Free Consultation →</a>
+                    </div>
+
+                    <!-- تگ‌های مقاله -->
+                    <div class="post-tags">
+                        <a href="#" class="tag">WordPress</a>
+                        <a href="#" class="tag">Elementor Pro</a>
+                        <a href="#" class="tag">JetEngine</a>
+                        <a href="#" class="tag">Web Development</a>
+                    </div>
+                </article>
+
+                <!-- سایدبار مقاله -->
+                <aside class="post-sidebar" aria-label="Article sidebar">
+
+                    <!-- فهرست مطالب -->
+                    <div class="sidebar-widget">
+                        <h4>📋 Table of Contents</h4>
+                        <nav class="toc-nav">
+                            <a href="#tech-stack">Why Elementor + JetEngine</a>
+                            <a href="#ai-workflows">AI in Web Workflows</a>
+                        </nav>
+                    </div>
+
+                    <!-- دکمه‌های اشتراک‌گذاری -->
+                    <div class="sidebar-widget">
+                        <h4>📤 Share Post</h4>
+                        <div class="share-btns">
+                            <a href="https://wa.me/?text=https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" target="_blank" rel="noopener" class="share-btn share-wa">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://t.me/share/url?url=https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" target="_blank" rel="noopener" class="share-btn share-tg">
+                                <i class="fa-brands fa-telegram"></i> Telegram
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://businesswebstudio.pro/posts/elementor-jetengine-custom-wordpress-guide.html" target="_blank" rel="noopener" class="share-btn share-li">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                            <button class="share-btn share-cp" id="copyBtn" onclick="copyLink()">
+                                <i class="fa-regular fa-copy"></i> Copy Link
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CTA سایدبار -->
+                    <div class="sidebar-cta">
+                        <h4>Ready to start your project?</h4>
+                        <p>Professional web design & custom WooCommerce solutions.</p>
+                        <a href="../index.html#contact">Contact Us</a>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+
     </main>
 
-    <!-- فوتر اصلی سایت شما اینجا قرار می‌گیرد -->
+    <!-- فوتر سایت -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0;">
+                <p>© 2026 BusinessWeb Studio. All rights reserved.</p>
+                <a href="../blog.html" class="btn-blog-back" style="color: var(--c5); text-decoration: none;">← Back to Blog List</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- اسکریپت کنترل اسکرول و پیشرفت مطالعه -->
+    <script>
+    (function() {
+        var header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            if (header) header.classList.toggle('scrolled', window.scrollY > 60);
+            
+            var el = document.getElementById('postContent');
+            if (el) {
+                var rect = el.getBoundingClientRect();
+                var total = el.offsetHeight - window.innerHeight;
+                var scrolled = Math.max(0, -rect.top);
+                var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+                document.getElementById('readBar').style.width = pct + '%';
+            }
+        }, { passive: true });
+
+        window.copyLink = function() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                var btn = document.getElementById('copyBtn');
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                setTimeout(function() {
+                    btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy Link';
+                }, 2000);
+            });
+        };
+    })();
+    </script>
 
 </body>
 </html>
