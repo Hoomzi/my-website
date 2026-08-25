@@ -436,3 +436,46 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+
+/* ══════════════════════════════════════════════════════════════════
+   POST PAGE SCRIPT (Reading Progress, Copy Link & Navigation)
+   ══════════════════════════════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.getElementById('header');
+    const readBar = document.getElementById('readBar');
+    const postContent = document.getElementById('postContent');
+
+    // ۱. کنترل نوار پیشرفت مطالعه و اسکرول هدر
+    window.addEventListener('scroll', function () {
+        // تغییر حالت هدر هنگام اسکرول
+        if (header) {
+            header.classList.toggle('scrolled', window.scrollY > 60);
+        }
+
+        // محاسبه درصد پیشرفت مطالعه مقاله
+        if (postContent && readBar) {
+            const rect = postContent.getBoundingClientRect();
+            const totalHeight = postContent.offsetHeight - window.innerHeight;
+            const scrolled = Math.max(0, -rect.top);
+            const percentage = Math.min(100, Math.max(0, (scrolled / totalHeight) * 100));
+            readBar.style.width = percentage + '%';
+        }
+    }, { passive: true });
+});
+
+// ۲. کپی کردن لینک مقاله
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+        const btn = document.getElementById('copyBtn');
+        if (btn) {
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(function () {
+                btn.innerHTML = originalHTML;
+            }, 2000);
+        }
+    }).catch(function (err) {
+        console.error('Could not copy text: ', err);
+    });
+}
