@@ -1343,3 +1343,187 @@ html:not([dir="rtl"]) .footer-bottom {
   }
   .faq-answer { padding: 0 1.25rem 1rem; }
 }
+/* ==========================================================================
+   Blog Article Template Styles
+   ========================================================================== */
+
+/* Layout Grid */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    direction: rtl;
+    font-family: 'PeydaWeb', sans-serif;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .blog-grid {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+/* Article Header */
+.article-header {
+    margin-bottom: 30px;
+}
+
+.article-category {
+    display: inline-block;
+    background-color: #f0f4f8;
+    color: #0066cc;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.article-title {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+/* Featured Image */
+.article-featured-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+/* Article Content Body (HTML Elements Direct Styling) */
+.article-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-body h2 {
+    font-size: 1.6rem;
+    color: #111;
+    margin: 40px 0 20px;
+    padding-right: 12px;
+    border-right: 4px solid #0066cc;
+}
+
+.article-body h3 {
+    font-size: 1.3rem;
+    color: #222;
+    margin: 30px 0 15px;
+}
+
+.article-body p {
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin: 0 24px 24px 0;
+    padding: 0;
+}
+
+.article-body li {
+    margin-bottom: 10px;
+}
+
+.article-body blockquote {
+    background-color: #f9f9f9;
+    border-right: 4px solid #0066cc;
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+/* Sidebar Styles */
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-widget {
+    background-color: #fdfdfd;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.widget-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0066cc;
+    color: #111;
+}
+
+.recent-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-posts-list li {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed #eee;
+}
+
+.recent-posts-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.recent-posts-list a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.recent-posts-list a:hover {
+    color: #0066cc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 1.6rem;
+    }
+    
+    .blog-container {
+        padding: 20px 15px;
+    }
+}
