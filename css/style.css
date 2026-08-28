@@ -1079,6 +1079,7 @@ footer {
   gap: 6px !important;
   transition: all var(--tr) !important;
   cursor: pointer !important;
+  margin-right: 36px;
 }
 
 .btn-lang:hover {
