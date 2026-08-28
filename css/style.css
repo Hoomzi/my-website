@@ -1059,7 +1059,7 @@ footer {
 
 /* ── ۱۵. سیستم دوزبانه و RTL / LTR ── */
 .lang-switch-wrap {
-  margin-right: -5.8rem;
+  margin-right: -10.8rem;
   display: block;
   flex-shrink: 0;
 }
@@ -1095,7 +1095,7 @@ html[dir="rtl"] body {
   font-family: var(--font-fa);
 }
 html[dir="rtl"] .lang-switch-wrap {
-  margin-left: -10rem;
+  margin-left: -12rem;
  
 }
 html[dir="rtl"] .service-card,
