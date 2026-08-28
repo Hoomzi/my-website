@@ -1205,12 +1205,12 @@ html:not([dir="rtl"]) .footer-bottom {
     flex-wrap: nowrap !important;
   }
   html:not([dir="rtl"]) #nav {
-    margin-left: 33px !important;
+    margin-left: 0px !important;
     margin-right: 1rem !important;
   }
   html[dir="rtl"] #nav {
-    margin-right: 33px !important;
-    margin-left: 1rem !important;
+    margin-right: 0px !important;
+    margin-left: 3rem !important;
   }
 }
 
