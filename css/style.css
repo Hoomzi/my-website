@@ -1095,8 +1095,8 @@ html[dir="rtl"] body {
   font-family: var(--font-fa);
 }
 html[dir="rtl"] .lang-switch-wrap {
-  margin-left: 0;
-  margin-right: 1.2rem;
+  margin-left: -85px;
+  margin-right: 0.2rem;
 }
 html[dir="rtl"] .service-card,
 html[dir="rtl"] .section-head,
