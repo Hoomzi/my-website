@@ -1059,7 +1059,7 @@ footer {
 
 /* ── ۱۵. سیستم دوزبانه و RTL / LTR ── */
 .lang-switch-wrap {
-  margin-left: 1.2rem;
+  margin-right: -5.8rem;
   display: block;
   flex-shrink: 0;
 }
