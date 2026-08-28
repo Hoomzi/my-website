@@ -132,8 +132,8 @@ nav {
   display: flex;
   align-items: center;
   gap: 2.2rem;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 0px;
+  padding-right: 10px;
 }
 
 nav a {
